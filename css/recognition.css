@@ -1,0 +1,124 @@
+/* ─── Recognition Page ──────────────────────────────────────────── */
+
+#recognition-main {
+  margin-left: 220px;
+  height: 100vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+  padding: 80px 80px 100px 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+#recognition-main::-webkit-scrollbar {
+  display: none;
+}
+
+/* ─── Sections ──────────────────────────────────────────────────── */
+
+.recognition-section {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 60px;
+  padding: 48px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.recognition-section:last-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.rec-label {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.52rem;
+  font-weight: 300;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.35);
+  padding-top: 3px;
+}
+
+/* ─── Entry list ────────────────────────────────────────────────── */
+
+.rec-entries {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.rec-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.rec-entry:first-child {
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.rec-name {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0a0a0a;
+  line-height: 1.4;
+}
+
+.rec-project {
+  color: rgba(0, 0, 0, 0.38);
+}
+
+.rec-year {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.58rem;
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  color: rgba(0, 0, 0, 0.38);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ─── Contact footer ────────────────────────────────────────────── */
+
+.recognition-page #about-contact {
+  padding-top: 40px;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  #recognition-main {
+    margin-left: 180px;
+    padding: 60px 40px 80px 40px;
+  }
+
+  .recognition-section {
+    grid-template-columns: 140px 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  #recognition-main {
+    margin-left: 0;
+    height: auto;
+    overflow-y: visible;
+    padding: 28px 24px 60px;
+  }
+
+  .recognition-section {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 32px 0;
+  }
+
+  .rec-entry {
+    gap: 16px;
+  }
+}

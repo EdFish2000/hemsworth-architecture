@@ -6,11 +6,28 @@
   <title>Projects — Hemsworth Architecture</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/projects.css">
+  <link rel="stylesheet" href="css/about.css">
 </head>
 <body class="projects-page">
 
   <!-- Page entrance overlay -->
   <div id="page-overlay"></div>
+
+  <!-- Hamburger menu — top right -->
+  <div id="hamburger">
+    <button id="hamburger-btn" aria-label="Menu" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <nav id="hamburger-nav" aria-hidden="true">
+      <ul>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="recognition.html">Recognition</a></li>
+      </ul>
+    </nav>
+  </div>
 
   <!-- Left sidebar -->
   <aside id="sidebar">
@@ -19,6 +36,12 @@
       <span class="firm-name">Hemsworth</span>
       <span class="firm-type">Architecture</span>
     </a>
+
+    <div id="mobile-nav" aria-hidden="true">
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+      <a href="recognition.html">Recognition</a>
+    </div>
 
     <nav id="category-nav">
       <ul>
@@ -206,5 +229,6 @@
   </main>
 
   <script src="js/projects.js"></script>
+  <script src="js/about.js"></script>
 </body>
 </html>

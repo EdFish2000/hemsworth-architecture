@@ -1,5 +1,10 @@
 /* ─── About Page ────────────────────────────────────────────────── */
 
+/* Mobile nav strip — hidden everywhere except mobile when menu open */
+#mobile-nav {
+  display: none;
+}
+
 .about-page #sidebar {
   /* Sidebar wordmark only — no nav, no footer */
 }
@@ -268,6 +273,37 @@
   #hamburger {
     top: 22px;
     right: 24px;
+  }
+
+  /* Suppress the desktop hamburger-nav on mobile — replaced by #mobile-nav */
+  #hamburger-nav,
+  #hamburger-nav.open {
+    display: none !important;
+  }
+
+  /* Mobile nav: shown in sidebar flow when menu is open */
+  #sidebar.menu-open #mobile-nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    padding: 4px 0 2px;
+  }
+
+  #mobile-nav a {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 0.62rem;
+    font-weight: 300;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.45);
+    transition: color 0.25s ease;
+    white-space: nowrap;
+  }
+
+  #mobile-nav a:hover {
+    color: #0a0a0a;
   }
 
   .team-member {
