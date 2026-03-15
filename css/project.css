@@ -116,22 +116,12 @@
 /* ─── Project Info ──────────────────────────────────────────────── */
 
 #project-info {
-  position: relative;
   display: grid;
   grid-template-columns: 280px 1fr;
   gap: 80px;
   padding: 72px 80px 100px;
 }
 
-#project-info::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 80px;
-  right: 80px;
-  height: 1px;
-  background: rgba(0, 0, 0, 0.07);
-}
 
 /* ─── Facts column ──────────────────────────────────────────────── */
 
@@ -259,11 +249,6 @@
     grid-template-columns: 200px 1fr;
     gap: 48px;
     padding: 48px 40px 80px;
-  }
-
-  #project-info::before {
-    left: 40px;
-    right: 40px;
   }
 
   #back-link {
