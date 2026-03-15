@@ -30,7 +30,7 @@
 }
 
 .rec-label {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.52rem;
   font-weight: 300;
   letter-spacing: 0.28em;
@@ -61,7 +61,7 @@
 }
 
 .rec-name {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.68rem;
   font-weight: 300;
   letter-spacing: 0.08em;
@@ -75,7 +75,7 @@
 }
 
 .rec-year {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.58rem;
   font-weight: 300;
   letter-spacing: 0.18em;

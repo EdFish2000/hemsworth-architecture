@@ -46,30 +46,16 @@
 }
 
 #sidebar-wordmark {
-  display: flex;
-  flex-direction: column;
+  display: block;
   text-decoration: none;
-  line-height: 1;
-  gap: 3px;
+  line-height: 0;
   margin-bottom: 56px;
 }
 
-#sidebar-wordmark .firm-name {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 0.85rem;
-  font-weight: 300;
-  letter-spacing: 0.18em;
-  color: #0a0a0a;
-  text-transform: uppercase;
-}
-
-#sidebar-wordmark .firm-type {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 0.52rem;
-  font-weight: 300;
-  letter-spacing: 0.28em;
-  color: rgba(0, 0, 0, 0.38);
-  text-transform: uppercase;
+#sidebar-wordmark img {
+  display: block;
+  width: 130px;
+  height: auto;
 }
 
 /* ─── Category Nav ──────────────────────────────────────────────── */
@@ -82,7 +68,7 @@
 }
 
 .cat-link {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.65rem;
   font-weight: 300;
   letter-spacing: 0.22em;
@@ -122,7 +108,7 @@
 
 #sidebar-footer {
   margin-top: auto;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.52rem;
   font-weight: 300;
   letter-spacing: 0.22em;
@@ -184,7 +170,7 @@
 }
 
 .card-title {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.72rem;
   font-weight: 300;
   letter-spacing: 0.12em;
@@ -194,7 +180,7 @@
 }
 
 .card-detail {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.58rem;
   font-weight: 300;
   letter-spacing: 0.18em;

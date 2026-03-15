@@ -124,31 +124,15 @@ header {
 }
 
 #wordmark {
-  display: flex;
-  flex-direction: column;
+  display: block;
   text-decoration: none;
-  line-height: 1;
-  gap: 3px;
+  line-height: 0;
 }
 
-.firm-name {
+#wordmark img {
   display: block;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 1.05rem;
-  font-weight: 300;
-  letter-spacing: 0.18em;
-  color: #fff;
-  text-transform: uppercase;
-}
-
-.firm-type {
-  display: block;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 0.62rem;
-  font-weight: 300;
-  letter-spacing: 0.28em;
-  color: rgba(255, 255, 255, 0.55);
-  text-transform: uppercase;
+  width: 140px;
+  height: auto;
 }
 
 /* ─── Scroll Hint ───────────────────────────────────────────────── */
@@ -168,7 +152,7 @@ header {
 }
 
 #scroll-hint span {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.55rem;
   font-weight: 300;
   letter-spacing: 0.3em;
@@ -222,13 +206,7 @@ header {
     padding: 28px 24px;
   }
 
-  .firm-name {
-    font-size: 0.9rem;
-    letter-spacing: 0.15em;
-  }
-
-  .firm-type {
-    font-size: 0.55rem;
-    letter-spacing: 0.22em;
+  #wordmark img {
+    width: 120px;
   }
 }

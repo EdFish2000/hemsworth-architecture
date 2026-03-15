@@ -88,7 +88,7 @@
 }
 
 #hamburger-nav a {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.62rem;
   font-weight: 300;
   letter-spacing: 0.22em;
@@ -132,7 +132,7 @@
 }
 
 .section-label {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.52rem;
   font-weight: 300;
   letter-spacing: 0.28em;
@@ -143,7 +143,7 @@
 /* ─── Philosophy text ───────────────────────────────────────────── */
 
 .about-lead {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 1.05rem;
   font-weight: 300;
   line-height: 1.6;
@@ -160,7 +160,7 @@
 }
 
 .about-body p {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.82rem;
   font-weight: 300;
   line-height: 1.85;
@@ -190,7 +190,7 @@
 }
 
 .member-name {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.72rem;
   font-weight: 300;
   letter-spacing: 0.1em;
@@ -199,7 +199,7 @@
 }
 
 .member-role {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.58rem;
   font-weight: 300;
   letter-spacing: 0.18em;
@@ -224,7 +224,7 @@
 }
 
 #about-contact a {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.65rem;
   font-weight: 300;
   letter-spacing: 0.18em;
@@ -291,7 +291,7 @@
   }
 
   #mobile-nav a {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 0.62rem;
     font-weight: 300;
     letter-spacing: 0.22em;
