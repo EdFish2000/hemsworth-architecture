@@ -18,6 +18,7 @@
   width: 100%;
   padding-top: 80px;
   padding-right: 80px;
+  padding-left: 80px;
 }
 
 #gallery-track {
@@ -45,7 +46,7 @@
 
 .gallery-arrow {
   position: absolute;
-  top: 50%;
+  top: calc(50% + 40px);
   transform: translateY(-50%);
   background: none;
   border: none;
@@ -63,7 +64,7 @@
 }
 
 #arrow-prev {
-  left: 20px;
+  left: 100px;
 }
 
 #arrow-next {
@@ -221,6 +222,11 @@
 
   #gallery {
     padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  #arrow-prev {
+    left: 60px;
   }
 
   #arrow-next {
@@ -262,6 +268,7 @@
 
   #gallery {
     padding-right: 0;
+    padding-left: 0;
   }
 
   #gallery-track {
