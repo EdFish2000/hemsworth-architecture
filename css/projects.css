@@ -218,25 +218,37 @@
 }
 
 @media (max-width: 640px) {
+  /* Fix 2: allow page to scroll — override the global html,body overflow:hidden from style.css */
+  html,
+  .projects-page {
+    overflow-y: auto;
+    height: auto;
+    min-height: 100%;
+  }
+
+  /* Fix 1: sidebar becomes a stacked header — wordmark row, then nav row */
   #sidebar {
     position: relative;
     width: 100%;
     height: auto;
-    flex-direction: row;
-    align-items: center;
-    padding: 20px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 24px 16px;
+    gap: 14px;
     border-right: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.07);
   }
 
   #sidebar-wordmark {
     margin-bottom: 0;
-    margin-right: auto;
+    margin-right: 0;
   }
 
+  /* Fix 1: nav items wrap so they never overflow at 390px */
   #category-nav ul {
     flex-direction: row;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 12px 20px;
   }
 
   #sidebar-footer {

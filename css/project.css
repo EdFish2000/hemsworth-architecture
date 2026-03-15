@@ -220,8 +220,11 @@
 }
 
 @media (max-width: 640px) {
+  /* Fix 3: project main flows naturally — body handles scrolling */
   .project-page #project-main {
     margin-left: 0;
+    height: auto;
+    overflow-y: visible;
   }
 
   #project-info {
@@ -230,7 +233,57 @@
     padding: 40px 24px 60px;
   }
 
+  #gallery {
+    padding-right: 0;
+  }
+
   #gallery-track {
     aspect-ratio: 4 / 3;
+  }
+
+  /* ── Mobile restructured layout ── */
+
+  #mobile-hero .mobile-slide,
+  #mobile-rest-images .mobile-slide {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    display: block;
+  }
+
+  #mobile-rest-images {
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
+    margin-top: 38px;
+  }
+
+  #mobile-title-bar {
+    padding: 24px 24px 4px;
+  }
+
+  #mobile-title-bar .project-title {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+
+  .mobile-year {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 0.58rem;
+    font-weight: 300;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.38);
+  }
+
+  #mobile-description-body {
+    padding: 28px 24px 0;
+  }
+
+  #mobile-facts-section {
+    padding: 48px 24px 0;
+  }
+
+  #mobile-facts-section .facts-heading {
+    margin-bottom: 20px;
   }
 }
