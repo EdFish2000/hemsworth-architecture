@@ -17,7 +17,7 @@
   position: relative;
   width: 100%;
   padding-top: 80px;
-  padding-right: 48px;
+  padding-right: 80px;
 }
 
 #gallery-track {
@@ -67,7 +67,7 @@
 }
 
 #arrow-next {
-  right: 68px;
+  right: 100px;
 }
 
 .gallery-arrow svg {
@@ -79,7 +79,7 @@
 #gallery-counter {
   position: absolute;
   bottom: 18px;
-  right: 72px;
+  right: 104px;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.58rem;
   font-weight: 300;
@@ -97,11 +97,21 @@
 /* ─── Project Info ──────────────────────────────────────────────── */
 
 #project-info {
+  position: relative;
   display: grid;
   grid-template-columns: 280px 1fr;
   gap: 80px;
-  padding: 72px 48px 100px;
-  border-top: 1px solid rgba(0, 0, 0, 0.07);
+  padding: 72px 80px 100px;
+}
+
+#project-info::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 80px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.07);
 }
 
 /* ─── Facts column ──────────────────────────────────────────────── */
@@ -178,12 +188,13 @@
   line-height: 1.85;
   color: rgba(0, 0, 0, 0.7);
   letter-spacing: 0.01em;
+  text-align: justify;
 }
 
 /* ─── Back link ─────────────────────────────────────────────────── */
 
 #back-link {
-  padding: 0 48px 80px;
+  padding: 0 80px 80px;
 }
 
 #back-link a {
@@ -208,14 +219,30 @@
     margin-left: 180px;
   }
 
+  #gallery {
+    padding-right: 40px;
+  }
+
+  #arrow-next {
+    right: 60px;
+  }
+
+  #gallery-counter {
+    right: 64px;
+  }
+
   #project-info {
     grid-template-columns: 200px 1fr;
     gap: 48px;
-    padding: 48px 24px 80px;
+    padding: 48px 40px 80px;
+  }
+
+  #project-info::before {
+    right: 40px;
   }
 
   #back-link {
-    padding: 0 24px 60px;
+    padding: 0 40px 60px;
   }
 }
 
