@@ -109,7 +109,7 @@
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
+  left: 80px;
   right: 80px;
   height: 1px;
   background: rgba(0, 0, 0, 0.07);
@@ -244,6 +244,7 @@
   }
 
   #project-info::before {
+    left: 40px;
     right: 40px;
   }
 
