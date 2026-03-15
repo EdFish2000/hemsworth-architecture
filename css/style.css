@@ -1,0 +1,234 @@
+/* ─── Reset & Base ─────────────────────────────────────────────── */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #0a0a0a;
+  cursor: none;
+}
+
+/* ─── Custom Cursor ─────────────────────────────────────────────── */
+
+body::after {
+  content: '';
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  left: var(--cursor-x, 50%);
+  top: var(--cursor-y, 50%);
+  z-index: 1000;
+  transition: opacity 0.3s;
+}
+
+/* ─── Hero Container ────────────────────────────────────────────── */
+
+#hero {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ─── Slides ────────────────────────────────────────────────────── */
+
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1.8s ease-in-out;
+
+  /* Placeholder gradient backgrounds — replace with real images */
+  background-color: #1a1a1a;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+/* Placeholder gradient colours for each slide (visible until real images load) */
+
+.slide:nth-child(1) {
+  /* Warm amber — burnt sienna / raw timber */
+  background-image: linear-gradient(
+    160deg,
+    #3b1f0a 0%,
+    #7a3b10 40%,
+    #b05a1a 70%,
+    #4a2008 100%
+  ) !important;
+}
+
+.slide:nth-child(2) {
+  /* Cool slate — overcast concrete / rainy Vancouver */
+  background-image: linear-gradient(
+    135deg,
+    #0d1f2d 0%,
+    #1a3a52 35%,
+    #2a5470 65%,
+    #091520 100%
+  ) !important;
+}
+
+.slide:nth-child(3) {
+  /* Warm sage — weathered CLT / mossy cedar */
+  background-image: linear-gradient(
+    150deg,
+    #0f1f10 0%,
+    #2a4a20 30%,
+    #3d6b2e 60%,
+    #0a1508 100%
+  ) !important;
+}
+
+.slide:nth-child(4) {
+  /* Cool ash — pale birch / snow light */
+  background-image: linear-gradient(
+    140deg,
+    #1a1a22 0%,
+    #3a3a50 35%,
+    #5a5a78 65%,
+    #101018 100%
+  ) !important;
+}
+
+/* Subtle dark overlay on all slides */
+.slide::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+/* ─── Header / Wordmark ─────────────────────────────────────────── */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  padding: 42px 48px;
+}
+
+#wordmark {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  line-height: 1;
+  gap: 3px;
+}
+
+.firm-name {
+  display: block;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.firm-type {
+  display: block;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.62rem;
+  font-weight: 300;
+  letter-spacing: 0.28em;
+  color: rgba(255, 255, 255, 0.55);
+  text-transform: uppercase;
+}
+
+/* ─── Scroll Hint ───────────────────────────────────────────────── */
+
+#scroll-hint {
+  position: fixed;
+  bottom: 42px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  animation: hint-fade 3s ease-in-out 2s infinite;
+  opacity: 0;
+}
+
+#scroll-hint span {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.55rem;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  color: rgba(255, 255, 255, 0.45);
+  text-transform: uppercase;
+}
+
+#scroll-hint::before {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.3);
+  animation: line-drop 3s ease-in-out 2s infinite;
+}
+
+@keyframes hint-fade {
+  0%   { opacity: 0; }
+  20%  { opacity: 1; }
+  80%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes line-drop {
+  0%   { transform: scaleY(0); transform-origin: top; }
+  50%  { transform: scaleY(1); transform-origin: top; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* ─── Transition overlay (navigating away) ──────────────────────── */
+
+#transition-overlay {
+  position: fixed;
+  inset: 0;
+  background: #0a0a0a;
+  z-index: 500;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease-in-out;
+}
+
+#transition-overlay.fade-in {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────── */
+
+@media (max-width: 600px) {
+  header {
+    padding: 28px 24px;
+  }
+
+  .firm-name {
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+  }
+
+  .firm-type {
+    font-size: 0.55rem;
+    letter-spacing: 0.22em;
+  }
+}
