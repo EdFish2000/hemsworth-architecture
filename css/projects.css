@@ -159,6 +159,8 @@
   aspect-ratio: 16 / 9;
   overflow: hidden;
   transition: opacity 0.3s ease;
+  background-size: cover;
+  background-position: center;
 }
 
 .card-link:hover .card-image {

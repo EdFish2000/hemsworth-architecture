@@ -42,6 +42,24 @@
   opacity: 1;
 }
 
+/* Image-based slides (used when <img> is inside .gallery-slide) */
+.gallery-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Portrait slides — contain image, show background either side */
+.gallery-slide.portrait {
+  background: #f5f4f2;
+}
+
+.gallery-slide.portrait img {
+  object-fit: contain;
+}
+
 /* ─── Arrows ────────────────────────────────────────────────────── */
 
 .gallery-arrow {
@@ -282,6 +300,17 @@
   #mobile-rest-images .mobile-slide {
     width: 100%;
     aspect-ratio: 4 / 3;
+    display: block;
+    position: relative;
+  }
+
+  #mobile-hero .mobile-slide img,
+  #mobile-rest-images .mobile-slide img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
   }
 

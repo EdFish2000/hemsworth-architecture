@@ -49,11 +49,16 @@
   const desc      = document.getElementById('project-description');
   const backLink  = document.getElementById('back-link');
 
-  // Helper: create a static slide div from an existing slide's background style
+  // Helper: create a static slide div — supports both background-image and <img> slides
   function makeStaticSlide (sourceSlide) {
     const div = document.createElement('div');
     div.className = 'mobile-slide';
-    div.setAttribute('style', sourceSlide.getAttribute('style'));
+    const img = sourceSlide.querySelector('img');
+    if (img) {
+      div.appendChild(img.cloneNode(true));
+    } else {
+      div.setAttribute('style', sourceSlide.getAttribute('style'));
+    }
     return div;
   }
 

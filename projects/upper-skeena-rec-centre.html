@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upper Skeena Recreation Centre — Hemsworth Architecture</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/projects.css">
+  <link rel="stylesheet" href="../css/project.css">
+  <link rel="stylesheet" href="../css/about.css">
+</head>
+<body class="projects-page project-page">
+
+  <!-- Page entrance overlay -->
+  <div id="page-overlay"></div>
+
+  <!-- Hamburger menu — top right -->
+  <div id="hamburger">
+    <button id="hamburger-btn" aria-label="Menu" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <nav id="hamburger-nav" aria-hidden="true">
+      <ul>
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../recognition.html">Recognition</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Left sidebar -->
+  <aside id="sidebar">
+
+    <a href="../index.html" id="sidebar-wordmark">
+      <img src="../assets/logo/Hemsworth-Logo-dark.svg" alt="Hemsworth Architecture">
+    </a>
+
+    <div id="mobile-nav" aria-hidden="true">
+      <a href="../projects.html">Projects</a>
+      <a href="../about.html">About</a>
+      <a href="../recognition.html">Recognition</a>
+    </div>
+
+    <nav id="category-nav">
+      <ul>
+        <li><a href="../projects.html" class="cat-link">All</a></li>
+        <li><a href="../projects.html?cat=public" class="cat-link active">Public</a></li>
+        <li><a href="../projects.html?cat=industrial" class="cat-link">Industrial</a></li>
+        <li><a href="../projects.html?cat=residential" class="cat-link">Residential</a></li>
+        <li><a href="../projects.html?cat=other" class="cat-link">Other</a></li>
+      </ul>
+    </nav>
+
+    <div id="sidebar-footer">
+      <span>Vancouver, BC</span>
+    </div>
+
+  </aside>
+
+  <!-- Main content -->
+  <main id="project-main">
+
+    <!-- Photo gallery -->
+    <section id="gallery">
+
+      <div id="gallery-track">
+        <div class="gallery-slide active">
+          <img src="../assets/images/projects/1-USRC/01-USRC-Ice-Surface.webp" alt="Ice surface view">
+        </div>
+        <div class="gallery-slide">
+          <img src="../assets/images/projects/1-USRC/02-USRC-Aerial.webp" alt="Aerial view">
+        </div>
+        <div class="gallery-slide">
+          <img src="../assets/images/projects/1-USRC/03-USRC-from-Councourse.webp" alt="View from concourse">
+        </div>
+        <div class="gallery-slide">
+          <img src="../assets/images/projects/1-USRC/04-USRC-Players-Bench.webp" alt="Players bench">
+        </div>
+        <div class="gallery-slide">
+          <img src="../assets/images/projects/1-USRC/05-USRC-Naming-Ceremony.webp" alt="Naming ceremony">
+        </div>
+        <div class="gallery-slide">
+          <img src="../assets/images/projects/1-USRC/06-USRC-from-Councourse.webp" alt="View from concourse">
+        </div>
+        <div class="gallery-slide">
+          <img src="../assets/images/projects/1-USRC/07-USRC-Players-Bench.webp" alt="Players bench">
+        </div>
+        <div class="gallery-slide">
+          <img src="../assets/images/projects/1-USRC/09-USRC-Front-Aerial.webp" alt="Front aerial view">
+        </div>
+        <div class="gallery-slide">
+          <img src="../assets/images/projects/1-USRC/10-USRC-Site-Plan.webp" alt="Site plan">
+        </div>
+        <div class="gallery-slide">
+          <img src="../assets/images/projects/1-USRC/11-USRC-Ice-Level-Plan.webp" alt="Ice level plan">
+        </div>
+        <div class="gallery-slide">
+          <img src="../assets/images/projects/1-USRC/12-USRC-Mezzanine-Plan.webp" alt="Mezzanine plan">
+        </div>
+        <div class="gallery-slide portrait">
+          <img src="../assets/images/projects/1-USRC/13-USRC-Entry.webp" alt="Building entry">
+        </div>
+        <div class="gallery-slide">
+          <img src="../assets/images/projects/1-USRC/14-USRC-Fitness-Room.webp" alt="Fitness room">
+        </div>
+        <div class="gallery-slide portrait">
+          <img src="../assets/images/projects/1-USRC/15-USRC-Gym.webp" alt="Gymnasium">
+        </div>
+        <div class="gallery-slide">
+          <img src="../assets/images/projects/1-USRC/19-USRC-Handshake.webp" alt="Handshake ceremony">
+        </div>
+        <div class="gallery-slide">
+          <img src="../assets/images/projects/1-USRC/20-USRC-Seating-Area.webp" alt="Seating area">
+        </div>
+      </div>
+
+      <!-- Arrows -->
+      <button id="arrow-prev" class="gallery-arrow" aria-label="Previous image">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <line x1="18" y1="4" x2="8" y2="14" stroke="currentColor" stroke-width="1.2"/>
+          <line x1="8" y1="14" x2="18" y2="24" stroke="currentColor" stroke-width="1.2"/>
+        </svg>
+      </button>
+
+      <button id="arrow-next" class="gallery-arrow" aria-label="Next image">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <line x1="10" y1="4" x2="20" y2="14" stroke="currentColor" stroke-width="1.2"/>
+          <line x1="20" y1="14" x2="10" y2="24" stroke="currentColor" stroke-width="1.2"/>
+        </svg>
+      </button>
+
+      <!-- Counter -->
+      <div id="gallery-counter">
+        <span id="counter-current">1</span>
+        <span class="counter-sep">/</span>
+        <span id="counter-total">16</span>
+      </div>
+
+    </section>
+
+    <!-- Project info -->
+    <section id="project-info">
+
+      <div id="project-facts">
+        <h3 class="facts-heading">Project</h3>
+        <dl class="facts-list">
+          <div class="fact-row">
+            <dt>Category</dt>
+            <dd>Public</dd>
+          </div>
+          <div class="fact-row">
+            <dt>Location</dt>
+            <dd>Hazelton, BC</dd>
+          </div>
+          <div class="fact-row">
+            <dt>Territory</dt>
+            <dd>Traditional, unceded territory of the Gitxsan people</dd>
+          </div>
+          <div class="fact-row">
+            <dt>Year</dt>
+            <dd>2019</dd>
+          </div>
+          <div class="fact-row">
+            <dt>Size</dt>
+            <dd>5,100 m²</dd>
+          </div>
+          <div class="fact-row">
+            <dt>Structural</dt>
+            <dd>Equilibrium Consulting</dd>
+          </div>
+          <div class="fact-row">
+            <dt>Mechanical</dt>
+            <dd>MCW Consultants Ltd.</dd>
+          </div>
+          <div class="fact-row">
+            <dt>Electrical</dt>
+            <dd>NRS Engineering Ltd.</dd>
+          </div>
+          <div class="fact-row">
+            <dt>Refrigeration</dt>
+            <dd>JS Refrigeration Engineering Inc.</dd>
+          </div>
+          <div class="fact-row">
+            <dt>Contractor</dt>
+            <dd>Yellowridge Construction Ltd.</dd>
+          </div>
+          <div class="fact-row">
+            <dt>Photography</dt>
+            <dd>Ema Peter</dd>
+          </div>
+          <div class="fact-row">
+            <dt>Video</dt>
+            <dd><a href="https://youtu.be/7wCz3lDgm3M" target="_blank" rel="noopener">youtu.be/7wCz3lDgm3M</a></dd>
+          </div>
+        </dl>
+
+        <h3 class="facts-heading" style="margin-top: 40px;">Awards</h3>
+        <dl class="facts-list">
+          <div class="fact-row">
+            <dt>2020</dt>
+            <dd>North American Wood Design Award</dd>
+          </div>
+          <div class="fact-row">
+            <dt>2021</dt>
+            <dd>AFBC Lieutenant Governor's Award</dd>
+          </div>
+          <div class="fact-row">
+            <dt>2021</dt>
+            <dd>AFBC Design Excellence Award — Cultural Building</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div id="project-description">
+        <h1 class="project-title">Upper Skeena Recreation Centre</h1>
+
+        <div class="description-body">
+          <p>The Upper Skeena Recreation Centre replaces a forty year old volunteer-built arena in Hazelton, a remote northern community on the traditional territory of the Gitxsan people. Its design emerged from an unprecedented partnership between Indigenous leaders, local municipalities, and community organizations, the first of its kind in the region.</p>
+
+          <p>The long-span glulam structure arranges small members into a simple arch, carrying heavy snow loads while utilizing the natural strength of engineered mass timber in a highly efficient and cost effective system. The exposed timber, tapered columns, and cedar cladding reference the scale and materiality of Gitxsan longhouses. Over 26,000 hours of local labour were invested in prefabricating the roof and wall panels on site. The building is not only used by the community, but was made by it.</p>
+
+          <p>As Hereditary Chief Gordon Sebastian expressed at opening, "We wake up in the morning and we feel good that we have such a beautiful building. It is the result of efforts of all the local people."</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Back to projects -->
+    <div id="back-link">
+      <a href="../projects.html">← All Projects</a>
+    </div>
+
+  </main>
+
+  <script src="../js/projects.js"></script>
+  <script src="../js/project.js"></script>
+  <script src="../js/about.js"></script>
+</body>
+</html>
