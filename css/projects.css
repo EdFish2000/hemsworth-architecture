@@ -1,0 +1,253 @@
+/* ─── Projects Page ─────────────────────────────────────────────── */
+
+.projects-page {
+  background: #f5f4f2;
+  color: #0a0a0a;
+  overflow: hidden;
+  height: 100%;
+  cursor: default;
+}
+
+/* Remove home-page cursor dot on projects page */
+.projects-page::after {
+  display: none;
+}
+
+/* ─── Page entrance overlay ─────────────────────────────────────── */
+
+#page-overlay {
+  position: fixed;
+  inset: 0;
+  background: #f5f4f2;
+  z-index: 400;
+  opacity: 1;
+  transition: opacity 1.5s ease-in-out;
+  pointer-events: none;
+}
+
+#page-overlay.cleared {
+  opacity: 0;
+}
+
+/* ─── Sidebar ───────────────────────────────────────────────────── */
+
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 42px 40px;
+  z-index: 100;
+  border-right: 1px solid rgba(0, 0, 0, 0.07);
+  background: #f5f4f2;
+}
+
+#sidebar-wordmark {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  line-height: 1;
+  gap: 3px;
+  margin-bottom: 56px;
+}
+
+#sidebar-wordmark .firm-name {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  color: #0a0a0a;
+  text-transform: uppercase;
+}
+
+#sidebar-wordmark .firm-type {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.52rem;
+  font-weight: 300;
+  letter-spacing: 0.28em;
+  color: rgba(0, 0, 0, 0.38);
+  text-transform: uppercase;
+}
+
+/* ─── Category Nav ──────────────────────────────────────────────── */
+
+#category-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cat-link {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.65rem;
+  font-weight: 300;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.35);
+  transition: color 0.25s ease;
+  display: inline-block;
+  position: relative;
+}
+
+.cat-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background: #0a0a0a;
+  transition: width 0.3s ease;
+}
+
+.cat-link:hover {
+  color: #0a0a0a;
+}
+
+.cat-link:hover::after,
+.cat-link.active::after {
+  width: 100%;
+}
+
+.cat-link.active {
+  color: #0a0a0a;
+}
+
+/* ─── Sidebar footer ────────────────────────────────────────────── */
+
+#sidebar-footer {
+  margin-top: auto;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.52rem;
+  font-weight: 300;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.28);
+}
+
+/* ─── Project Grid ──────────────────────────────────────────────── */
+
+#project-grid {
+  margin-left: 220px;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 42px 48px 120px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  align-content: start;
+}
+
+/* Hide scrollbar but keep scrollability */
+#project-grid::-webkit-scrollbar {
+  display: none;
+}
+#project-grid {
+  scrollbar-width: none;
+}
+
+/* ─── Project Cards ─────────────────────────────────────────────── */
+
+.project-card {
+  opacity: 1;
+  transition: opacity 0.35s ease;
+}
+
+.project-card.hidden {
+  display: none;
+}
+
+.card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.card-link:hover .card-image {
+  opacity: 0.82;
+}
+
+.card-meta {
+  padding: 14px 0 56px;
+}
+
+.card-title {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0a0a0a;
+  margin-bottom: 5px;
+}
+
+.card-detail {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.58rem;
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.38);
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  #sidebar {
+    width: 180px;
+    padding: 28px 24px;
+  }
+
+  #project-grid {
+    margin-left: 180px;
+    padding: 28px 24px 60px;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  #sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px 24px;
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  }
+
+  #sidebar-wordmark {
+    margin-bottom: 0;
+    margin-right: auto;
+  }
+
+  #category-nav ul {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  #sidebar-footer {
+    display: none;
+  }
+
+  #project-grid {
+    margin-left: 0;
+    height: auto;
+    overflow-y: visible;
+    grid-template-columns: 1fr;
+    padding: 24px 24px 60px;
+  }
+}

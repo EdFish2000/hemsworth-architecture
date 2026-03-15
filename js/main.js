@@ -41,7 +41,7 @@
 
     setTimeout(function () {
       window.location.href = 'projects.html';
-    }, 650);
+    }, 1550);
   }
 
   // Click anywhere (except the wordmark, which has its own link)

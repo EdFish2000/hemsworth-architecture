@@ -4,35 +4,207 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects — Hemsworth Architecture</title>
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background: #0a0a0a;
-      color: rgba(255,255,255,0.6);
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      font-weight: 300;
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      flex-direction: column;
-      gap: 24px;
-    }
-    p { letter-spacing: 0.3em; }
-    a {
-      color: rgba(255,255,255,0.35);
-      text-decoration: none;
-      letter-spacing: 0.25em;
-      transition: color 0.3s;
-    }
-    a:hover { color: rgba(255,255,255,0.8); }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/projects.css">
 </head>
-<body>
-  <p>Projects — coming soon</p>
-  <a href="index.html">← Back</a>
+<body class="projects-page">
+
+  <!-- Page entrance overlay -->
+  <div id="page-overlay"></div>
+
+  <!-- Left sidebar -->
+  <aside id="sidebar">
+
+    <a href="index.html" id="sidebar-wordmark">
+      <span class="firm-name">Hemsworth</span>
+      <span class="firm-type">Architecture</span>
+    </a>
+
+    <nav id="category-nav">
+      <ul>
+        <li><a href="#" class="cat-link active" data-cat="all">All</a></li>
+        <li><a href="#" class="cat-link" data-cat="public">Public</a></li>
+        <li><a href="#" class="cat-link" data-cat="industrial">Industrial</a></li>
+        <li><a href="#" class="cat-link" data-cat="residential">Residential</a></li>
+        <li><a href="#" class="cat-link" data-cat="other">Other</a></li>
+      </ul>
+    </nav>
+
+    <div id="sidebar-footer">
+      <span>Vancouver, BC</span>
+    </div>
+
+  </aside>
+
+  <!-- Main project grid -->
+  <main id="project-grid">
+
+    <!-- Public -->
+
+    <article class="project-card" data-cat="public">
+      <a href="#" class="card-link">
+        <div class="card-image" style="
+          background: linear-gradient(145deg, #2a1f0e 0%, #5c3d18 45%, #8a5c2a 75%, #3a2510 100%);
+        "></div>
+        <div class="card-meta">
+          <h2 class="card-title">Burnaby Civic Pavilion</h2>
+          <p class="card-detail">Burnaby, BC &nbsp;·&nbsp; 2023</p>
+        </div>
+      </a>
+    </article>
+
+    <article class="project-card" data-cat="public">
+      <a href="#" class="card-link">
+        <div class="card-image" style="
+          background: linear-gradient(160deg, #0f1e2a 0%, #1e3d52 45%, #2e607a 75%, #0a1520 100%);
+        "></div>
+        <div class="card-meta">
+          <h2 class="card-title">North Shore Transit Exchange</h2>
+          <p class="card-detail">North Vancouver, BC &nbsp;·&nbsp; 2022</p>
+        </div>
+      </a>
+    </article>
+
+    <article class="project-card" data-cat="public">
+      <a href="#" class="card-link">
+        <div class="card-image" style="
+          background: linear-gradient(135deg, #1a2a1a 0%, #2e4a28 45%, #3d6035 75%, #101a10 100%);
+        "></div>
+        <div class="card-meta">
+          <h2 class="card-title">Strathcona Cultural Hall</h2>
+          <p class="card-detail">Vancouver, BC &nbsp;·&nbsp; 2024</p>
+        </div>
+      </a>
+    </article>
+
+    <article class="project-card" data-cat="public">
+      <a href="#" class="card-link">
+        <div class="card-image" style="
+          background: linear-gradient(150deg, #1e1a2e 0%, #38306a 45%, #504888 75%, #140f22 100%);
+        "></div>
+        <div class="card-meta">
+          <h2 class="card-title">UBC Mass Timber Library</h2>
+          <p class="card-detail">Vancouver, BC &nbsp;·&nbsp; 2024</p>
+        </div>
+      </a>
+    </article>
+
+    <!-- Industrial -->
+
+    <article class="project-card" data-cat="industrial">
+      <a href="#" class="card-link">
+        <div class="card-image" style="
+          background: linear-gradient(140deg, #1c1a14 0%, #3a3520 45%, #58502e 75%, #121008 100%);
+        "></div>
+        <div class="card-meta">
+          <h2 class="card-title">Delta Logistics Centre</h2>
+          <p class="card-detail">Delta, BC &nbsp;·&nbsp; 2023</p>
+        </div>
+      </a>
+    </article>
+
+    <article class="project-card" data-cat="industrial">
+      <a href="#" class="card-link">
+        <div class="card-image" style="
+          background: linear-gradient(155deg, #1a1010 0%, #3d2020 45%, #6a3535 75%, #100a0a 100%);
+        "></div>
+        <div class="card-meta">
+          <h2 class="card-title">Port Moody Fabrication Hall</h2>
+          <p class="card-detail">Port Moody, BC &nbsp;·&nbsp; 2021</p>
+        </div>
+      </a>
+    </article>
+
+    <article class="project-card" data-cat="industrial">
+      <a href="#" class="card-link">
+        <div class="card-image" style="
+          background: linear-gradient(145deg, #101820 0%, #203040 45%, #304858 75%, #081018 100%);
+        "></div>
+        <div class="card-meta">
+          <h2 class="card-title">Surrey Distribution Hub</h2>
+          <p class="card-detail">Surrey, BC &nbsp;·&nbsp; 2024</p>
+        </div>
+      </a>
+    </article>
+
+    <!-- Residential -->
+
+    <article class="project-card" data-cat="residential">
+      <a href="#" class="card-link">
+        <div class="card-image" style="
+          background: linear-gradient(160deg, #28180a 0%, #5a3818 45%, #886040 75%, #1a100a 100%);
+        "></div>
+        <div class="card-meta">
+          <h2 class="card-title">Kitsilano Timber House</h2>
+          <p class="card-detail">Vancouver, BC &nbsp;·&nbsp; 2023</p>
+        </div>
+      </a>
+    </article>
+
+    <article class="project-card" data-cat="residential">
+      <a href="#" class="card-link">
+        <div class="card-image" style="
+          background: linear-gradient(135deg, #101e18 0%, #203d30 45%, #305848 75%, #081410 100%);
+        "></div>
+        <div class="card-meta">
+          <h2 class="card-title">Squamish Mountain Retreat</h2>
+          <p class="card-detail">Squamish, BC &nbsp;·&nbsp; 2022</p>
+        </div>
+      </a>
+    </article>
+
+    <article class="project-card" data-cat="residential">
+      <a href="#" class="card-link">
+        <div class="card-image" style="
+          background: linear-gradient(150deg, #1a1828 0%, #303060 45%, #484880 75%, #100e1c 100%);
+        "></div>
+        <div class="card-meta">
+          <h2 class="card-title">West End Residences</h2>
+          <p class="card-detail">Vancouver, BC &nbsp;·&nbsp; 2024</p>
+        </div>
+      </a>
+    </article>
+
+    <!-- Other -->
+
+    <article class="project-card" data-cat="other">
+      <a href="#" class="card-link">
+        <div class="card-image" style="
+          background: linear-gradient(140deg, #0e1a14 0%, #1e3828 45%, #2e5040 75%, #081008 100%);
+        "></div>
+        <div class="card-meta">
+          <h2 class="card-title">Pacific Spirit Research Station</h2>
+          <p class="card-detail">UBC, BC &nbsp;·&nbsp; 2023</p>
+        </div>
+      </a>
+    </article>
+
+    <article class="project-card" data-cat="other">
+      <a href="#" class="card-link">
+        <div class="card-image" style="
+          background: linear-gradient(155deg, #201818 0%, #403030 45%, #604848 75%, #180f0f 100%);
+        "></div>
+        <div class="card-meta">
+          <h2 class="card-title">Granville Island Canopy</h2>
+          <p class="card-detail">Vancouver, BC &nbsp;·&nbsp; 2022</p>
+        </div>
+      </a>
+    </article>
+
+    <article class="project-card" data-cat="other">
+      <a href="#" class="card-link">
+        <div class="card-image" style="
+          background: linear-gradient(145deg, #181828 0%, #303058 45%, #484870 75%, #0f0f1a 100%);
+        "></div>
+        <div class="card-meta">
+          <h2 class="card-title">Whistler Alpine Pavilion</h2>
+          <p class="card-detail">Whistler, BC &nbsp;·&nbsp; 2024</p>
+        </div>
+      </a>
+    </article>
+
+  </main>
+
+  <script src="js/projects.js"></script>
 </body>
 </html>

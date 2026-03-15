@@ -203,11 +203,11 @@ header {
 #transition-overlay {
   position: fixed;
   inset: 0;
-  background: #0a0a0a;
+  background: #f5f4f2;
   z-index: 500;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.6s ease-in-out;
+  transition: opacity 1.5s ease-in-out;
 }
 
 #transition-overlay.fade-in {
