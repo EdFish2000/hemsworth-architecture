@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1 Lonsdale — Hemsworth Architecture</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/projects.css">
+  <link rel="stylesheet" href="../css/project.css">
+  <link rel="stylesheet" href="../css/about.css">
+</head>
+<body class="projects-page project-page">
+
+  <!-- Page entrance overlay -->
+  <div id="page-overlay"></div>
+
+  <!-- Hamburger menu — top right -->
+  <div id="hamburger">
+    <button id="hamburger-btn" aria-label="Menu" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <nav id="hamburger-nav" aria-hidden="true">
+      <ul>
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../recognition.html">Recognition</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Left sidebar -->
+  <aside id="sidebar">
+
+    <a href="../index.html" id="sidebar-wordmark">
+      <img src="../assets/logo/Hemsworth-Logo-dark.svg" alt="Hemsworth Architecture">
+    </a>
+
+    <div id="mobile-nav" aria-hidden="true">
+      <a href="../projects.html">Projects</a>
+      <a href="../about.html">About</a>
+      <a href="../recognition.html">Recognition</a>
+    </div>
+
+    <nav id="category-nav">
+      <ul>
+        <li><a href="../projects.html" class="cat-link">All</a></li>
+        <li><a href="../projects.html?cat=public" class="cat-link active">Public</a></li>
+        <li><a href="../projects.html?cat=industrial" class="cat-link">Industrial</a></li>
+        <li><a href="../projects.html?cat=residential" class="cat-link">Residential</a></li>
+        <li><a href="../projects.html?cat=other" class="cat-link">Other</a></li>
+      </ul>
+    </nav>
+
+    <div id="sidebar-footer">
+      <span>Vancouver, BC</span>
+    </div>
+
+  </aside>
+
+  <!-- Main content -->
+  <main id="project-main">
+
+    <!-- Photo gallery -->
+    <section id="gallery">
+
+      <div id="gallery-track">
+        <div class="gallery-slide active">
+          <img src="../assets/images/projects/4-PH1/01-PH1-South-Elevation.webp" alt="South elevation">
+        </div>
+        <div class="gallery-slide">
+          <img src="../assets/images/projects/4-PH1/02-PH1-Corner-View.webp" alt="Corner view">
+        </div>
+        <div class="gallery-slide">
+          <img src="../assets/images/projects/4-PH1/03-PH1-Detail.webp" alt="Facade detail">
+        </div>
+        <div class="gallery-slide">
+          <img src="../assets/images/projects/4-PH1/04-PH1-Construction.webp" alt="Construction sequence">
+        </div>
+        <div class="gallery-slide">
+          <img src="../assets/images/projects/4-PH1/05-PH1-Envelope.webp" alt="Prefabricated envelope">
+        </div>
+        <div class="gallery-slide">
+          <img src="../assets/images/projects/4-PH1/06-PH1-Timber.webp" alt="Mass timber construction">
+        </div>
+        <div class="gallery-slide">
+          <img src="../assets/images/projects/4-PH1/09-PH1-Corner-Day.webp" alt="Corner view by day">
+        </div>
+        <div class="gallery-slide">
+          <img src="../assets/images/projects/4-PH1/10-PH1-Carrie-Cates.webp" alt="Carrie Cates Court">
+        </div>
+      </div>
+
+      <!-- Arrows -->
+      <button id="arrow-prev" class="gallery-arrow" aria-label="Previous image">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <line x1="18" y1="4" x2="8" y2="14" stroke="currentColor" stroke-width="1.2"/>
+          <line x1="8" y1="14" x2="18" y2="24" stroke="currentColor" stroke-width="1.2"/>
+        </svg>
+      </button>
+
+      <button id="arrow-next" class="gallery-arrow" aria-label="Next image">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <line x1="10" y1="4" x2="20" y2="14" stroke="currentColor" stroke-width="1.2"/>
+          <line x1="20" y1="14" x2="10" y2="24" stroke="currentColor" stroke-width="1.2"/>
+        </svg>
+      </button>
+
+      <!-- Counter -->
+      <div id="gallery-counter">
+        <span id="counter-current">1</span>
+        <span class="counter-sep">/</span>
+        <span id="counter-total">8</span>
+      </div>
+
+    </section>
+
+    <!-- Project info -->
+    <section id="project-info">
+
+      <div id="project-facts">
+        <h3 class="facts-heading">Project</h3>
+        <dl class="facts-list">
+          <div class="fact-row">
+            <dt>Category</dt>
+            <dd>Public</dd>
+          </div>
+          <div class="fact-row">
+            <dt>Location</dt>
+            <dd>North Vancouver, BC</dd>
+          </div>
+          <div class="fact-row">
+            <dt>Year</dt>
+            <dd>2021</dd>
+          </div>
+          <div class="fact-row">
+            <dt>Structural</dt>
+            <dd>Equilibrium Consulting</dd>
+          </div>
+          <div class="fact-row">
+            <dt>Mechanical</dt>
+            <dd>MCW Consultants Ltd.</dd>
+          </div>
+          <div class="fact-row">
+            <dt>Electrical</dt>
+            <dd>MCW Consultants Ltd.</dd>
+          </div>
+          <div class="fact-row">
+            <dt>Landscape</dt>
+            <dd>Prospect and Refuge</dd>
+          </div>
+          <div class="fact-row">
+            <dt>Civil</dt>
+            <dd>Vector Engineering Services Ltd.</dd>
+          </div>
+          <div class="fact-row">
+            <dt>Passive House</dt>
+            <dd>Peel Passive House Consulting Ltd.</dd>
+          </div>
+          <div class="fact-row">
+            <dt>Contractor</dt>
+            <dd>Naikoon Contracting Ltd.</dd>
+          </div>
+          <div class="fact-row">
+            <dt>Photography</dt>
+            <dd>Ema Peter</dd>
+          </div>
+        </dl>
+
+        <h3 class="facts-heading" style="margin-top: 40px;">Awards</h3>
+        <dl class="facts-list">
+          <div class="fact-row">
+            <dt>2021</dt>
+            <dd>AFBC Design Excellence Award — Innovation</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div id="project-description">
+        <h1 class="project-title">1 Lonsdale</h1>
+
+        <div class="description-body">
+          <p>1 Lonsdale is a three storey mass timber commercial building located at the foot of Lonsdale Avenue in North Vancouver, one of the first commercial buildings in Canada designed to Passive House standard, and the first to incorporate a full commercial kitchen.</p>
+
+          <p>The building uses a glulam post and beam structure with cross laminated timber floors, coordinated alongside a prefabricated Passive House compliant building envelope supplied by BC Passive House. The prefabricated approach allowed the structure to be erected in ten days, a critical advantage on a constrained urban infill site in a dense, established neighbourhood.</p>
+
+          <p>The project demonstrates that high performance building envelopes and mass timber construction are not only viable in commercial applications but can produce spaces that are warm, light filled, and genuinely pleasant to occupy. The exposed timber structure establishes the interior character, while the carefully composed brick and glazing facade responds to the warehouse vernacular of Lower Lonsdale.</p>
+
+          <p>The building received the AFBC Design Excellence Award for Innovation in 2021, recognizing the integration of Passive House performance with mass timber construction in a commercial context.</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Back to projects -->
+    <div id="back-link">
+      <a href="../projects.html">← All Projects</a>
+    </div>
+
+  </main>
+
+  <script src="../js/projects.js"></script>
+  <script src="../js/project.js"></script>
+  <script src="../js/about.js"></script>
+</body>
+</html>
