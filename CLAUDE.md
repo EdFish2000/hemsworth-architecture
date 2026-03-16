@@ -22,6 +22,7 @@ Portfolio website for Hemsworth Architecture, a Vancouver-based architecture fir
 - Plain HTML / CSS / JS — no framework, no build tools
 - Python 3 local preview server (`./serve.sh` → http://localhost:8000)
 - Node.js + sharp for image optimisation (WebP conversion)
+- GitHub: https://github.com/EdFish2000/hemsworth-architecture
 
 ## File Structure
 ```
@@ -41,7 +42,8 @@ Portfolio website for Hemsworth Architecture, a Vancouver-based architecture fir
 │   │   └── projects/
 │   │       ├── 1-USRC/               16 WebP images
 │   │       ├── 2-Leon-Lebeniste/     12 WebP images
-│   │       └── 3-BCPH/               7 WebP images
+│   │       ├── 3-BCPH/               7 WebP images
+│   │       └── 4-PH1/                8 WebP images
 │   └── content/
 ├── css/
 │   ├── style.css           Global reset, home page, transitions
@@ -57,7 +59,8 @@ Portfolio website for Hemsworth Architecture, a Vancouver-based architecture fir
 └── projects/
     ├── upper-skeena-rec-centre.html
     ├── leon-lebeniste.html
-    └── bc-passive-house-factory.html
+    ├── bc-passive-house-factory.html
+    └── 1-lonsdale.html
 ```
 
 ## Pages — Status
@@ -65,12 +68,13 @@ Portfolio website for Hemsworth Architecture, a Vancouver-based architecture fir
 | Page | Status | Notes |
 |------|--------|-------|
 | Home (`index.html`) | ✅ Complete | Real hero photography, white fade transition, scroll/click nav |
-| Projects (`projects.html`) | ✅ Complete | 3 real project cards wired up; remaining cards are placeholders |
-| About (`about.html`) | ✅ Complete | Philosophy, team, justified text, email/Instagram footer |
+| Projects (`projects.html`) | ✅ Complete | 4 live projects at top, placeholders below; category filter works across all |
+| About (`about.html`) | ✅ Complete | Real practice text, territorial acknowledgement, 6 team members, real email/Instagram |
 | Recognition (`recognition.html`) | ✅ Complete | Awards/Publications/Press, email/Instagram footer |
 | Upper Skeena Rec Centre | ✅ Complete | 16 images, facts, awards (AFBC, Wood Design), description |
 | Leon Lebeniste | ✅ Complete | 12 images, facts, award (Architecture Master Prize), description |
 | BC Passive House Factory | ✅ Complete | 7 images, facts, awards (GG Medal, AIBC, Wood Design), description |
+| 1 Lonsdale | ✅ Complete | 8 images, facts (size omitted pending confirmation), award (AFBC Innovation), description |
 
 ## Project Pages — Pattern
 Each project page follows a consistent structure:
@@ -96,30 +100,36 @@ Each project page follows a consistent structure:
 - Filter driven by URL query string (`?cat=public` etc.) via `projects.js`
 - Active sidebar category link set via `class="cat-link active"` on each project page
 
+## projects.html — Current Grid Order
+Live projects appear first (top of grid), placeholders follow:
+
+1. Upper Skeena Recreation Centre — Public ✅
+2. Leon Lebeniste — Industrial ✅
+3. BC Passive House Factory — Industrial ✅
+4. 1 Lonsdale — Public ✅
+5. Burnaby Civic Pavilion — Public (placeholder, links to project.html)
+6. UBC Mass Timber Library — Public (placeholder)
+7. Port Moody Fabrication Hall — Industrial (placeholder)
+8. Surrey Distribution Hub — Industrial (placeholder)
+9. Kitsilano Timber House — Residential (placeholder)
+10. Squamish Mountain Retreat — Residential (placeholder)
+11. West End Residences — Residential (placeholder)
+12. Pacific Spirit Research Station — Other (placeholder)
+13. Granville Island Canopy — Other (placeholder)
+14. Whistler Alpine Pavilion — Other (placeholder)
+
 ## Known Issues / Pending
-- `recognition.html` placeholder email and Instagram URL need real values
 - No 404 page
 - No favicon
-- Projects grid still has placeholder gradient cards (no photos yet): Strathcona Cultural Hall, UBC Mass Timber Library, and residential/other categories
+- 1 Lonsdale: Size field omitted pending confirmation
+- `recognition.html` contact details need real values
+- Remaining grid cards are placeholder gradients — replace as photography is provided
 
 ## Next Session — Exact Next Steps
-Build additional project pages as photography is provided. The following placeholder cards remain in projects.html:
+Build additional project pages as photography is provided:
 
-**Public:**
-- Strathcona Cultural Hall — Vancouver, BC · 2024 (placeholder)
-- UBC Mass Timber Library — Vancouver, BC · 2024 (placeholder)
-
-**Industrial:**
-- (Delta Logistics Centre placeholder removed — replaced by BCPH)
-
-**Residential / Other:**
-- All cards are still placeholders
-
-For each new project:
 1. Check `assets/images/projects/` for a new numbered folder
 2. Run sharp conversion (WebP, max 1920px, q80)
 3. Create `projects/{slug}.html` following the existing pattern
-4. Replace the corresponding placeholder card in `projects.html`
+4. Insert the new card above the placeholder block in `projects.html` (maintain live-first order)
 5. Commit
-
-Also pending: update `recognition.html` with real email address and Instagram URL once provided.
