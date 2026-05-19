@@ -10,27 +10,32 @@ Portfolio website for Hemsworth Architecture, a Vancouver-based architecture fir
 ## Design Decisions
 - **Color palette:** Black (#000) on white (#f5f4f2), dark home page (#0a0a0a background)
 - **Typography:** Arial, Helvetica, sans-serif — font-weight 300 throughout, uppercase + letter-spacing for labels
-- **Navigation:** Wordmark top-left on all pages; hamburger top-right on all inner pages (Projects / About / Recognition)
+- **Navigation:** Wordmark top-left on all pages; hamburger hidden on desktop (≥641px), visible on mobile only; left sidebar shows flat site nav: Projects, Approach, Team, Recognition, Contact; category filters nested as sub-nav under Projects on desktop
 - **Home hero:** Full-bleed, 4-slide crossfade, 6s interval, 1.8s transition; click or scroll navigates to projects
 - **Page transitions:** Slow white dissolve (1.5s each way) between all pages
 - **Projects grid:** Single column, full-width 16:9 images, continuous scroll
-- **Project detail:** Full-width 16:9 gallery with arrow navigation, two-column info below (facts left, description right); no separator line between gallery and info
-- **About / Recognition:** Left sidebar wordmark only; hamburger top-right; justified body text
-- **Mobile (<640px):** Sidebar becomes stacked header; hamburger opens #mobile-nav row in sidebar flow; body scroll enabled; project page restructures to vertical sequence (hero → title/year → description → remaining images → facts)
+- **Project detail:** Full-width 16:9 gallery; full-height left/right click zones for navigation; arrows edge-aligned, subtle at rest, bolder stroke on hover; dot indicators at bottom; two-column info below (facts left, description right); no divider lines
+- **Inner pages (Approach, Team, Recognition, Contact):** Left sidebar with site nav; no footer contact links on Approach, Team, Recognition
+- **Mobile (<640px):** Sidebar becomes stacked header; hamburger opens #mobile-nav row in sidebar flow; body scroll enabled; project page restructures to vertical sequence (hero → title/year → description → remaining images → facts); category filters appear as horizontal scroll strip between header and grid on projects.html
 
 ## Tech Stack
 - Plain HTML / CSS / JS — no framework, no build tools
 - Python 3 local preview server (`./serve.sh` → http://localhost:8000)
 - Node.js + sharp for image optimisation (WebP conversion)
 - GitHub: https://github.com/EdFish2000/hemsworth-architecture
+- Netlify: https://hemsworth-architecture.netlify.app — auto-deploys on every push to main
+- SSH key configured on this Mac (ed25519) and added to GitHub account EdFish2000
 
 ## File Structure
 ```
 /
 ├── index.html                        Home page (hero slideshow)
-├── projects.html                     Projects grid with category filter
-├── about.html                        About page
-├── recognition.html                  Recognition page
+├── projects.html                     Projects grid with category filter + mobile filter strip
+├── about.html                        Redirects to approach.html (meta refresh)
+├── approach.html                     Practice philosophy — hero image + body text
+├── team.html                         Team list — hero image + member names/roles
+├── contact.html                      Address, phone, emails, Instagram — two-column layout
+├── recognition.html                  Awards / Publications / Press — no divider lines
 ├── serve.sh                          Local preview server (port 8000)
 ├── CLAUDE.md                         This file
 ├── assets/
@@ -49,12 +54,12 @@ Portfolio website for Hemsworth Architecture, a Vancouver-based architecture fir
 │   ├── style.css           Global reset, home page, transitions
 │   ├── projects.css        Projects page, sidebar, shared inner-page styles
 │   ├── project.css         Individual project detail page
-│   ├── about.css           About page, hamburger menu (shared across pages)
+│   ├── about.css           Approach/Team/Contact/Recognition pages, hamburger, editorial image
 │   └── recognition.css     Recognition page
 ├── js/
 │   ├── main.js             Home page slideshow + navigation
 │   ├── projects.js         Projects page fade-in + category filter
-│   ├── project.js          Gallery arrows, keyboard/touch nav, mobile DOM restructure
+│   ├── project.js          Gallery zones, dot indicators, keyboard/touch nav, mobile DOM restructure
 │   └── about.js            Hamburger toggle (shared across all inner pages)
 └── projects/
     ├── upper-skeena-rec-centre.html
@@ -68,24 +73,31 @@ Portfolio website for Hemsworth Architecture, a Vancouver-based architecture fir
 | Page | Status | Notes |
 |------|--------|-------|
 | Home (`index.html`) | ✅ Complete | Real hero photography, white fade transition, scroll/click nav |
-| Projects (`projects.html`) | ✅ Complete | 4 live projects at top, placeholders below; category filter works across all |
-| About (`about.html`) | ✅ Complete | Real practice text, territorial acknowledgement, 6 team members, real email/Instagram |
-| Recognition (`recognition.html`) | ✅ Complete | Awards/Publications/Press, email/Instagram footer |
-| Upper Skeena Rec Centre | ✅ Complete | 16 images, facts, awards (AFBC, Wood Design), description |
-| Leon Lebeniste | ✅ Complete | 12 images, facts, award (Architecture Master Prize), description |
-| BC Passive House Factory | ✅ Complete | 7 images, facts, awards (GG Medal, AIBC, Wood Design), description |
-| 1 Lonsdale | ✅ Complete | 8 images, facts (size omitted pending confirmation), award (AFBC Innovation), description |
+| Projects (`projects.html`) | ✅ Complete | 4 live projects, placeholders below; desktop sub-nav + mobile scroll strip filter |
+| About (`about.html`) | ✅ Complete | Redirects to approach.html |
+| Approach (`approach.html`) | ✅ Complete | Hero image (USRC), practice text, territorial acknowledgement |
+| Team (`team.html`) | ✅ Complete | Hero image (BCPH), 5 members: Hemsworth, Shwedyk, Jones, van der Voorn, Boese |
+| Contact (`contact.html`) | ✅ Complete | Address, phone, office@ + employment@ emails, Instagram; two-column layout with hero image |
+| Recognition (`recognition.html`) | ✅ Complete | Awards/Publications/Press; no divider lines; dates in aligned column |
+| Upper Skeena Rec Centre | ✅ Complete | 16 images, Territory field, Video field, awards on separate lines |
+| Leon Lebeniste | ✅ Complete | 12 images, awards on separate lines |
+| BC Passive House Factory | ✅ Complete | 7 images, awards on separate lines |
+| 1 Lonsdale | ✅ Complete | 8 images, size omitted pending confirmation, award on separate line |
 
 ## Project Pages — Pattern
 Each project page follows a consistent structure:
 - HTML: `projects/{slug}.html`
 - Loads: `../css/style.css`, `../css/projects.css`, `../css/project.css`, `../css/about.css`
 - Scripts: `../js/projects.js`, `../js/project.js`, `../js/about.js`
-- Gallery: `<img>` tags inside `.gallery-slide` divs; portrait images get class `gallery-slide portrait` (object-fit: contain, white background)
-- Counter: `counter-total` must be set manually to match slide count
-- Active category highlighted in sidebar via `class="cat-link active"` on the correct link
+- Gallery: `<img>` tags inside `.gallery-slide` divs; portrait images get class `gallery-slide portrait`
+- Navigation zones: `#zone-prev` and `#zone-next` divs inside `#gallery-track` (full-height left/right halves); dot indicators via `#gallery-dots` (populated by JS — no manual count needed)
+- Sidebar: site-nav with `class="site-link active"` on Projects link
+- Info panel: `#project-facts` starts directly with `<dl class="facts-list">` — no `<h3>` heading
+- Fields in order (omit any that don't apply): Location, Territory, Year, Size, Photographer, Video, Awards
+- Awards format: one `<span class="award-line">` per award inside the `<dd>`, text as "YEAR — AWARD NAME"
+- Video field: plain `<a href="...">` inside `<dd>` — inherits inline display, no text-transform
 - Image paths all use `../assets/images/projects/...`
-- `background-position` / `object-position` can be overridden inline per-image to frame the shot correctly
+- `object-position` can be overridden inline per-image to frame the shot correctly
 
 ## Image Optimisation — Convention
 - Tool: Node.js + sharp (`npm install sharp` already done)
@@ -96,9 +108,12 @@ Each project page follows a consistent structure:
 - Original source JPGs are committed alongside WebPs
 
 ## projects.html — Category Filter
-- Cards use `data-cat="public"`, `data-cat="industrial"`, `data-cat="residential"`, `data-cat="other"`
-- Filter driven by URL query string (`?cat=public` etc.) via `projects.js`
-- Active sidebar category link set via `class="cat-link active"` on each project page
+- Categories: `in-progress`, `first-nations`, `public`, `industrial`, `commercial`, `education`, `residential`, `other`, `all`
+- Cards use `data-cat="..."` matching the above slugs
+- Desktop: filters in `.sub-nav` nested under Projects in `#site-nav`
+- Mobile: filters in `#mobile-filters` strip (horizontal scroll, no wrap, hidden on desktop)
+- Active state managed by JS — do not hardcode `active` class on any filter link
+- Filter driven by click events via `projects.js`
 
 ## projects.html — Current Grid Order
 Live projects appear first (top of grid), placeholders follow:
@@ -122,14 +137,14 @@ Live projects appear first (top of grid), placeholders follow:
 - No 404 page
 - No favicon
 - 1 Lonsdale: Size field omitted pending confirmation
-- `recognition.html` contact details need real values
 - Remaining grid cards are placeholder gradients — replace as photography is provided
+- Mobile: second round of review pending
 
 ## Next Session — Exact Next Steps
 Build additional project pages as photography is provided:
 
 1. Check `assets/images/projects/` for a new numbered folder
 2. Run sharp conversion (WebP, max 1920px, q80)
-3. Create `projects/{slug}.html` following the existing pattern
+3. Create `projects/{slug}.html` following the existing pattern (see Project Pages — Pattern above)
 4. Insert the new card above the placeholder block in `projects.html` (maintain live-first order)
-5. Commit
+5. Commit and push
