@@ -239,6 +239,13 @@
 
 /* ─── Responsive ─────────────────────────────────────────────────── */
 
+/* Hide hamburger on desktop — mobile only */
+@media (min-width: 641px) {
+  #hamburger {
+    display: none;
+  }
+}
+
 @media (max-width: 900px) {
   #about-main {
     margin-left: 180px;

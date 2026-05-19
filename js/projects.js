@@ -18,8 +18,10 @@
     link.addEventListener('click', function (e) {
       e.preventDefault();
 
-      // Update active state
-      catLinks.forEach(function (l) { l.classList.remove('active'); });
+      // Update active state — re-query live DOM to guarantee stale refs don't persist
+      document.querySelectorAll('.cat-link').forEach(function (l) {
+        l.classList.remove('active');
+      });
       link.classList.add('active');
 
       const selected = link.dataset.cat;
