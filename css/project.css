@@ -60,57 +60,75 @@
   object-fit: contain;
 }
 
-/* ─── Arrows ────────────────────────────────────────────────────── */
+/* ─── Navigation zones ──────────────────────────────────────────── */
 
-.gallery-arrow {
+.gallery-zone {
   position: absolute;
-  top: calc(50% + 40px);
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  padding: 16px;
+  top: 0;
+  bottom: 0;
+  width: 50%;
   cursor: pointer;
-  color: rgba(255, 255, 255, 0.7);
   z-index: 10;
-  transition: color 0.2s ease, opacity 0.2s ease;
-  opacity: 0.6;
-}
-
-.gallery-arrow:hover {
-  color: #fff;
-  opacity: 1;
-}
-
-#arrow-prev {
-  left: 100px;
-}
-
-#arrow-next {
-  right: 100px;
-}
-
-.gallery-arrow svg {
-  display: block;
-}
-
-/* ─── Counter ───────────────────────────────────────────────────── */
-
-#gallery-counter {
-  position: absolute;
-  bottom: 18px;
-  right: 104px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.58rem;
-  font-weight: 300;
-  letter-spacing: 0.2em;
-  color: rgba(255, 255, 255, 0.5);
   display: flex;
-  gap: 4px;
   align-items: center;
 }
 
-.counter-sep {
-  opacity: 0.4;
+#zone-prev {
+  left: 0;
+  justify-content: flex-start;
+  padding-left: 28px;
+}
+
+#zone-next {
+  right: 0;
+  justify-content: flex-end;
+  padding-right: 28px;
+}
+
+.zone-arrow {
+  opacity: 0.3;
+  transition: opacity 0.2s ease;
+  color: rgba(255, 255, 255, 0.9);
+  pointer-events: none;
+}
+
+.zone-arrow line {
+  transition: stroke-width 0.2s ease;
+}
+
+.gallery-zone:hover .zone-arrow {
+  opacity: 1;
+}
+
+.gallery-zone:hover .zone-arrow line {
+  stroke-width: 2.5;
+}
+
+/* ─── Dot indicators ────────────────────────────────────────────── */
+
+#gallery-dots {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  z-index: 11;
+  pointer-events: none;
+}
+
+.gallery-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: background 0.25s ease;
+  flex-shrink: 0;
+}
+
+.gallery-dot.active {
+  background: rgba(255, 255, 255, 0.85);
 }
 
 /* ─── Project Info ──────────────────────────────────────────────── */
@@ -125,16 +143,6 @@
 
 /* ─── Facts column ──────────────────────────────────────────────── */
 
-.facts-heading {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.52rem;
-  font-weight: 300;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.35);
-  margin-bottom: 28px;
-}
-
 .facts-list {
   display: flex;
   flex-direction: column;
@@ -144,12 +152,16 @@
 .fact-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-items: baseline;
   padding: 11px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
 }
 
-.fact-row:first-of-type {
-  border-top: 1px solid rgba(0, 0, 0, 0.07);
+.award-line {
+  display: block;
+}
+
+.award-line + .award-line {
+  margin-top: 7px;
 }
 
 .facts-list dt,
@@ -169,6 +181,14 @@
 .facts-list dd {
   color: #0a0a0a;
   margin: 0;
+}
+
+.facts-list dd a {
+  display: inline;
+  color: inherit;
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: inherit;
 }
 
 /* ─── Description column ────────────────────────────────────────── */
@@ -231,18 +251,6 @@
   #gallery {
     padding-right: 40px;
     padding-left: 40px;
-  }
-
-  #arrow-prev {
-    left: 60px;
-  }
-
-  #arrow-next {
-    right: 60px;
-  }
-
-  #gallery-counter {
-    right: 64px;
   }
 
   #project-info {

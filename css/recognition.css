@@ -21,12 +21,11 @@
   display: grid;
   grid-template-columns: 180px 1fr;
   gap: 60px;
-  padding: 48px 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.07);
+  padding: 60px 0;
 }
 
-.recognition-section:last-child {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+.recognition-section:first-child {
+  padding-top: 0;
 }
 
 .rec-label {
@@ -48,16 +47,11 @@
 }
 
 .rec-entry {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: baseline;
-  gap: 24px;
-  padding: 11px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
-}
-
-.rec-entry:first-child {
-  border-top: 1px solid rgba(0, 0, 0, 0.07);
+  gap: 36px;
+  padding: 20px 0;
 }
 
 .rec-name {
@@ -101,6 +95,11 @@
   .recognition-section {
     grid-template-columns: 140px 1fr;
     gap: 40px;
+    padding: 48px 0;
+  }
+
+  .recognition-section:first-child {
+    padding-top: 0;
   }
 }
 
@@ -115,10 +114,15 @@
   .recognition-section {
     grid-template-columns: 1fr;
     gap: 16px;
-    padding: 32px 0;
+    padding: 40px 0;
+  }
+
+  .recognition-section:first-child {
+    padding-top: 0;
   }
 
   .rec-entry {
     gap: 16px;
+    padding: 14px 0;
   }
 }

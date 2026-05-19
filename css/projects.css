@@ -269,6 +269,12 @@
   color: rgba(0, 0, 0, 0.38);
 }
 
+/* ─── Mobile filter strip ───────────────────────────────────────── */
+
+#mobile-filters {
+  display: none;
+}
+
 /* ─── Responsive ─────────────────────────────────────────────────── */
 
 @media (max-width: 900px) {
@@ -311,13 +317,6 @@
     margin-right: 0;
   }
 
-  /* Fix 1: nav items wrap so they never overflow at 390px */
-  #category-nav ul {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 12px 20px;
-  }
-
   #site-nav {
     display: none;
   }
@@ -332,5 +331,26 @@
     overflow-y: visible;
     grid-template-columns: 1fr;
     padding: 24px 24px 60px;
+  }
+
+  #mobile-filters {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    gap: 20px;
+    padding: 14px 24px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  }
+
+  #mobile-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  #mobile-filters .cat-link {
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-left: 0;
   }
 }

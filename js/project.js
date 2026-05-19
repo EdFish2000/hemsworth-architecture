@@ -3,23 +3,32 @@
 (function () {
 
   // ── Desktop gallery ───────────────────────────────────────────
-  const slides         = Array.from(document.querySelectorAll('.gallery-slide'));
-  const total          = slides.length;
-  const counterCurrent = document.getElementById('counter-current');
-  let current          = 0;
+  const slides = Array.from(document.querySelectorAll('.gallery-slide'));
+  const total  = slides.length;
+  let current  = 0;
+
+  // Build dot indicators
+  const dotsContainer = document.getElementById('gallery-dots');
+  slides.forEach(function (_, i) {
+    const dot = document.createElement('div');
+    dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+    dotsContainer.appendChild(dot);
+  });
+  const dots = Array.from(dotsContainer.children);
 
   function goTo (index) {
     slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
     current = (index + total) % total;
     slides[current].classList.add('active');
-    counterCurrent.textContent = current + 1;
+    dots[current].classList.add('active');
   }
 
-  document.getElementById('arrow-next').addEventListener('click', function () {
+  document.getElementById('zone-next').addEventListener('click', function () {
     goTo(current + 1);
   });
 
-  document.getElementById('arrow-prev').addEventListener('click', function () {
+  document.getElementById('zone-prev').addEventListener('click', function () {
     goTo(current - 1);
   });
 

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team — Hemsworth Architecture</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/projects.css">
+  <link rel="stylesheet" href="css/about.css">
+</head>
+<body class="projects-page about-page">
+
+  <!-- Page entrance overlay -->
+  <div id="page-overlay"></div>
+
+  <!-- Left sidebar -->
+  <aside id="sidebar">
+    <a href="index.html" id="sidebar-wordmark">
+      <img src="assets/logo/Hemsworth-Logo-dark.svg" alt="Hemsworth Architecture">
+    </a>
+
+    <div id="mobile-nav" aria-hidden="true">
+      <a href="projects.html">Projects</a>
+      <a href="approach.html">Approach</a>
+      <a href="team.html">Team</a>
+      <a href="recognition.html">Recognition</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <nav id="site-nav">
+      <ul>
+        <li><a href="projects.html" class="site-link">Projects</a></li>
+        <li><a href="approach.html" class="site-link">Approach</a></li>
+        <li><a href="team.html" class="site-link active">Team</a></li>
+        <li><a href="recognition.html" class="site-link">Recognition</a></li>
+        <li><a href="contact.html" class="site-link">Contact</a></li>
+      </ul>
+    </nav>
+
+  </aside>
+
+  <!-- Hamburger menu — top right -->
+  <div id="hamburger">
+    <button id="hamburger-btn" aria-label="Menu" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <nav id="hamburger-nav" aria-hidden="true">
+      <ul>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="approach.html">Approach</a></li>
+        <li><a href="recognition.html">Recognition</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Main content -->
+  <main id="about-main">
+
+    <!-- Editorial image -->
+    <div class="editorial-image">
+      <img src="assets/images/projects/3-BCPH/03-BCPH.webp" alt="Interior workspace">
+    </div>
+
+    <!-- Team -->
+    <ul class="team-list">
+      <li class="team-member">
+        <span class="member-name">John Hemsworth</span>
+        <span class="member-role">Principal, Design Lead</span>
+      </li>
+      <li class="team-member">
+        <span class="member-name">Dean Shwedyk</span>
+        <span class="member-role">Senior Associate, Project Lead</span>
+      </li>
+      <li class="team-member">
+        <span class="member-name">Niall Jones</span>
+        <span class="member-role">Associate, Project Lead</span>
+      </li>
+      <li class="team-member">
+        <span class="member-name">Jorne van der Voorn</span>
+        <span class="member-role">Project Lead</span>
+      </li>
+      <li class="team-member">
+        <span class="member-name">Rebecca Boese</span>
+        <span class="member-role">Project Lead</span>
+      </li>
+    </ul>
+
+  </main>
+
+  <script src="js/projects.js"></script>
+  <script src="js/about.js"></script>
+</body>
+</html>

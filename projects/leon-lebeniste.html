@@ -39,8 +39,10 @@
 
     <div id="mobile-nav" aria-hidden="true">
       <a href="../projects.html">Projects</a>
-      <a href="../about.html">About</a>
+      <a href="../approach.html">Approach</a>
+      <a href="../team.html">Team</a>
       <a href="../recognition.html">Recognition</a>
+      <a href="../contact.html">Contact</a>
     </div>
 
     <nav id="site-nav">
@@ -102,28 +104,23 @@
         <div class="gallery-slide">
           <img src="../assets/images/projects/2-Leon-Lebeniste/18-LL1-1886.webp" alt="Exterior detail">
         </div>
-      </div>
+        <!-- Navigation zones -->
+        <div id="zone-prev" class="gallery-zone">
+          <svg class="zone-arrow" width="52" height="52" viewBox="0 0 52 52" fill="none">
+            <line x1="32" y1="8" x2="16" y2="26" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="16" y1="26" x2="32" y2="44" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div id="zone-next" class="gallery-zone">
+          <svg class="zone-arrow" width="52" height="52" viewBox="0 0 52 52" fill="none">
+            <line x1="20" y1="8" x2="36" y2="26" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="36" y1="26" x2="20" y2="44" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </div>
 
-      <!-- Arrows -->
-      <button id="arrow-prev" class="gallery-arrow" aria-label="Previous image">
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-          <line x1="18" y1="4" x2="8" y2="14" stroke="currentColor" stroke-width="1.2"/>
-          <line x1="8" y1="14" x2="18" y2="24" stroke="currentColor" stroke-width="1.2"/>
-        </svg>
-      </button>
+        <!-- Dot indicators -->
+        <div id="gallery-dots"></div>
 
-      <button id="arrow-next" class="gallery-arrow" aria-label="Next image">
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-          <line x1="10" y1="4" x2="20" y2="14" stroke="currentColor" stroke-width="1.2"/>
-          <line x1="20" y1="14" x2="10" y2="24" stroke="currentColor" stroke-width="1.2"/>
-        </svg>
-      </button>
-
-      <!-- Counter -->
-      <div id="gallery-counter">
-        <span id="counter-current">1</span>
-        <span class="counter-sep">/</span>
-        <span id="counter-total">12</span>
       </div>
 
     </section>
@@ -132,12 +129,7 @@
     <section id="project-info">
 
       <div id="project-facts">
-        <h3 class="facts-heading">Project</h3>
         <dl class="facts-list">
-          <div class="fact-row">
-            <dt>Category</dt>
-            <dd>Industrial</dd>
-          </div>
           <div class="fact-row">
             <dt>Location</dt>
             <dd>Squamish, BC</dd>
@@ -151,36 +143,14 @@
             <dd>2,700 m²</dd>
           </div>
           <div class="fact-row">
-            <dt>Structural</dt>
-            <dd>Equilibrium Consulting</dd>
-          </div>
-          <div class="fact-row">
-            <dt>Mechanical</dt>
-            <dd>MCW Consultants Ltd.</dd>
-          </div>
-          <div class="fact-row">
-            <dt>Electrical</dt>
-            <dd>MCL Engineering Ltd.</dd>
-          </div>
-          <div class="fact-row">
-            <dt>Landscape</dt>
-            <dd>Considered Design Inc.</dd>
-          </div>
-          <div class="fact-row">
-            <dt>Contractor</dt>
-            <dd>Kindred Construction</dd>
-          </div>
-          <div class="fact-row">
-            <dt>Photography</dt>
+            <dt>Photographer</dt>
             <dd>Ema Peter</dd>
           </div>
-        </dl>
-
-        <h3 class="facts-heading" style="margin-top: 40px;">Awards</h3>
-        <dl class="facts-list">
           <div class="fact-row">
-            <dt>2023</dt>
-            <dd>Architecture Master Prize, Best of Best — Industrial Building</dd>
+            <dt>Awards</dt>
+            <dd>
+              <span class="award-line">2023 — Architecture Master Prize, Best of Best — Industrial Building</span>
+            </dd>
           </div>
         </dl>
       </div>
