@@ -79,7 +79,7 @@
   // 2. Title + year
   const titleBar   = document.createElement('div');
   titleBar.id      = 'mobile-title-bar';
-  const titleClone = desc.querySelector('.project-title').cloneNode(true);
+  const titleClone = document.querySelector('.project-title').cloneNode(true);
 
   let yearText = '';
   facts.querySelectorAll('.fact-row').forEach(function (row) {

@@ -119,7 +119,30 @@
   display: flex;
   flex-direction: column;
   gap: 14px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin-top: 0;
+  transition: max-height 0.35s ease, opacity 0.25s ease, margin-top 0.3s ease;
+}
+
+.sub-nav.expanded {
+  max-height: 400px;
+  opacity: 1;
   margin-top: 16px;
+}
+
+/* Expand/collapse indicator on Projects link */
+.subnav-indicator {
+  display: inline-block;
+  margin-left: 7px;
+  font-size: 0.65rem;
+  font-weight: 300;
+  letter-spacing: 0;
+  color: rgba(0, 0, 0, 0.28);
+  user-select: none;
+  vertical-align: middle;
+  line-height: 1;
 }
 
 .sub-nav .cat-link {
