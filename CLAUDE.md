@@ -10,11 +10,11 @@ Portfolio website for Hemsworth Architecture, a Vancouver-based architecture fir
 ## Design Decisions
 - **Color palette:** Black (#000) on white (#f5f4f2), dark home page (#0a0a0a background)
 - **Typography:** Arial, Helvetica, sans-serif — font-weight 300 throughout, uppercase + letter-spacing for labels
-- **Navigation:** Wordmark top-left on all pages; hamburger hidden on desktop (≥641px), visible on mobile only; left sidebar shows flat site nav: Projects, Approach, Team, Recognition, Contact; category filters nested as sub-nav under Projects on desktop
+- **Navigation:** Wordmark top-left on all pages; hamburger hidden on desktop (≥641px), visible on mobile only; left sidebar shows flat site nav: Projects, Approach, Team, Recognition, Contact; category filters nested as sub-nav under Projects on desktop; sub-nav collapsed by default on all non-projects pages, clicking PROJECTS toggles expand/collapse with `+` indicator; always expanded on projects.html via hardcoded `expanded` class
 - **Home hero:** Full-bleed, 4-slide crossfade, 6s interval, 1.8s transition; click or scroll navigates to projects
 - **Page transitions:** Slow white dissolve (1.5s each way) between all pages
 - **Projects grid:** Single column, full-width 16:9 images, continuous scroll
-- **Project detail:** Full-width 16:9 gallery; full-height left/right click zones for navigation; arrows edge-aligned, subtle at rest, bolder stroke on hover; dot indicators at bottom; two-column info below (facts left, description right); no divider lines
+- **Project detail:** Full-width 16:9 gallery; full-height left/right click zones for navigation; arrows edge-aligned, subtle at rest, bolder stroke on hover; dot indicators at bottom; project title full-width above two-column info grid; facts left (labels + values both `rgba(0,0,0,0.38)` grey), description right; no divider lines
 - **Inner pages (Approach, Team, Recognition, Contact):** Left sidebar with site nav; no footer contact links on Approach, Team, Recognition
 - **Mobile (<640px):** Sidebar becomes stacked header; hamburger opens #mobile-nav row in sidebar flow; body scroll enabled; project page restructures to vertical sequence (hero → title/year → description → remaining images → facts); category filters appear as horizontal scroll strip between header and grid on projects.html
 
@@ -24,7 +24,7 @@ Portfolio website for Hemsworth Architecture, a Vancouver-based architecture fir
 - Node.js + sharp for image optimisation (WebP conversion)
 - GitHub: https://github.com/EdFish2000/hemsworth-architecture
 - Netlify: https://hemsworth-architecture.netlify.app — auto-deploys on every push to main
-- SSH key configured on this Mac (ed25519) and added to GitHub account EdFish2000
+- SSH key configured on this Mac (ed25519), added to GitHub account EdFish2000 — `git push` works without confirmation
 
 ## File Structure
 ```
@@ -76,7 +76,7 @@ Portfolio website for Hemsworth Architecture, a Vancouver-based architecture fir
 | Projects (`projects.html`) | ✅ Complete | 4 live projects, placeholders below; desktop sub-nav + mobile scroll strip filter |
 | About (`about.html`) | ✅ Complete | Redirects to approach.html |
 | Approach (`approach.html`) | ✅ Complete | Hero image (USRC), practice text, territorial acknowledgement |
-| Team (`team.html`) | ✅ Complete | Hero image (BCPH), 5 members: Hemsworth, Shwedyk, Jones, van der Voorn, Boese |
+| Team (`team.html`) | ✅ Complete | Hero image (BCPH); two-column grid (300px name+credentials / title); 5 members with credentials |
 | Contact (`contact.html`) | ✅ Complete | Address, phone, office@ + employment@ emails, Instagram; two-column layout with hero image |
 | Recognition (`recognition.html`) | ✅ Complete | Awards/Publications/Press; no divider lines; dates in aligned column |
 | Upper Skeena Rec Centre | ✅ Complete | 16 images, Territory field, Video field, awards on separate lines |
@@ -91,8 +91,8 @@ Each project page follows a consistent structure:
 - Scripts: `../js/projects.js`, `../js/project.js`, `../js/about.js`
 - Gallery: `<img>` tags inside `.gallery-slide` divs; portrait images get class `gallery-slide portrait`
 - Navigation zones: `#zone-prev` and `#zone-next` divs inside `#gallery-track` (full-height left/right halves); dot indicators via `#gallery-dots` (populated by JS — no manual count needed)
-- Sidebar: site-nav with `class="site-link active"` on Projects link
-- Info panel: `#project-facts` starts directly with `<dl class="facts-list">` — no `<h3>` heading
+- Sidebar: site-nav with `class="site-link active"` on Projects link; `.sub-nav` present without `expanded` (toggle handled by `about.js`)
+- Info panel: `<h1 class="project-title">` is a direct child of `#project-info` (full-width, above the grid); `#project-info-columns` wraps `#project-facts` and `#project-description` side by side; `#project-facts` starts directly with `<dl class="facts-list">` — no `<h3>` heading
 - Fields in order (omit any that don't apply): Location, Territory, Year, Size, Photographer, Video, Awards
 - Awards format: one `<span class="award-line">` per award inside the `<dd>`, text as "YEAR — AWARD NAME"
 - Video field: plain `<a href="...">` inside `<dd>` — inherits inline display, no text-transform
@@ -132,6 +132,18 @@ Live projects appear first (top of grid), placeholders follow:
 12. Pacific Spirit Research Station — Other (placeholder)
 13. Granville Island Canopy — Other (placeholder)
 14. Whistler Alpine Pavilion — Other (placeholder)
+
+## Team — Members and Credentials
+
+| Name | Title | Credentials |
+|------|-------|-------------|
+| John Hemsworth | Principal, Design Lead | Architect AIBC \| OAA \| M.ARCH \| B.ENG \| LEED AP \| MRAIC |
+| Dean Shwedyk | Senior Associate, Project Lead | MAA \| M.ARCH \| LEED AP |
+| Niall Jones | Associate, Project Lead | Associate M.ARCH \| NZIA \| CPHD |
+| Jorne van der Voorn | Project Lead | Architect AIBC \| M.ARCH \| B.ENG |
+| Rebecca Boese | Project Lead | Senior Designer BSc Arch. \| RIBA |
+
+Layout: two-column CSS grid, `grid-template-columns: 300px 1fr`, `column-gap: 10px`. Left cell = `.member-name-block` (name + credentials stacked). Right cell = `.member-role`. Mobile: flex column.
 
 ## Known Issues / Pending
 - No 404 page
