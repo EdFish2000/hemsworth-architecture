@@ -152,6 +152,19 @@ Layout: two-column CSS grid, `grid-template-columns: 300px 1fr`, `column-gap: 10
 - Remaining grid cards are placeholder gradients — replace as photography is provided
 - Mobile: second round of review pending
 
+## Pending — Final Pass (do once all project pages are built)
+
+1. **Prev / Next project navigation on project detail pages**
+   - Add Previous Project and Next Project links to the bottom carousel nav on every project detail page
+   - Keep the existing `← All Projects` link (`../projects.html`) in the centre between them
+   - Order must follow the main projects grid order (see projects.html — Current Grid Order above)
+   - Decide end behaviour at build time: either loop (last project wraps to first) or hide the arrow that has no target
+
+2. **Category assignments on projects.html**
+   - Set the correct `data-cat="..."` attribute on every live project card
+   - Categories: `in-progress`, `first-nations`, `public`, `industrial`, `commercial`, `education`, `residential`, `other`
+   - Currently the four live cards have placeholder categories — confirm final assignments with client before implementing
+
 ## Next Session — Exact Next Steps
 Build additional project pages as photography is provided:
 
