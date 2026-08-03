@@ -48,7 +48,8 @@ Portfolio website for Hemsworth Architecture, a Vancouver-based architecture fir
 │   │       ├── 1-USRC/               16 WebP images
 │   │       ├── 2-Leon-Lebeniste/     12 WebP images
 │   │       ├── 3-BCPH/               7 WebP images
-│   │       └── 4-PH1/                8 WebP images
+│   │       ├── 4-PH1/                8 WebP images
+│       └── 5-BCPH2/              6 WebP images
 │   └── content/
 ├── css/
 │   ├── style.css           Global reset, home page, transitions
@@ -83,6 +84,7 @@ Portfolio website for Hemsworth Architecture, a Vancouver-based architecture fir
 | Leon Lebeniste | ✅ Complete | 12 images, awards on separate lines |
 | BC Passive House Factory | ✅ Complete | 7 images, awards on separate lines |
 | 1 Lonsdale | ✅ Complete | 8 images, size omitted pending confirmation, award on separate line |
+| BC Passive House Factory Addition | ✅ Complete | 6 images, Territory field, no awards |
 
 ## Project Pages — Pattern
 Each project page follows a consistent structure:
@@ -116,22 +118,12 @@ Each project page follows a consistent structure:
 - Filter driven by click events via `projects.js`
 
 ## projects.html — Current Grid Order
-Live projects appear first (top of grid), placeholders follow:
 
 1. Upper Skeena Recreation Centre — Public ✅
 2. Leon Lebeniste — Industrial ✅
 3. BC Passive House Factory — Industrial ✅
 4. 1 Lonsdale — Public ✅
-5. Burnaby Civic Pavilion — Public (placeholder, links to project.html)
-6. UBC Mass Timber Library — Public (placeholder)
-7. Port Moody Fabrication Hall — Industrial (placeholder)
-8. Surrey Distribution Hub — Industrial (placeholder)
-9. Kitsilano Timber House — Residential (placeholder)
-10. Squamish Mountain Retreat — Residential (placeholder)
-11. West End Residences — Residential (placeholder)
-12. Pacific Spirit Research Station — Other (placeholder)
-13. Granville Island Canopy — Other (placeholder)
-14. Whistler Alpine Pavilion — Other (placeholder)
+5. BC Passive House Factory Addition — Industrial ✅
 
 ## Team — Members and Credentials
 
@@ -149,7 +141,6 @@ Layout: two-column CSS grid, `grid-template-columns: 300px 1fr`, `column-gap: 10
 - No 404 page
 - No favicon
 - 1 Lonsdale: Size field omitted pending confirmation
-- Remaining grid cards are placeholder gradients — replace as photography is provided
 - Mobile: second round of review pending
 
 ## Pending — Final Pass (do once all project pages are built)
