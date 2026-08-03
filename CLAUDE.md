@@ -49,7 +49,8 @@ Portfolio website for Hemsworth Architecture, a Vancouver-based architecture fir
 │   │       ├── 2-Leon-Lebeniste/     12 WebP images
 │   │       ├── 3-BCPH/               7 WebP images
 │   │       ├── 4-PH1/                8 WebP images
-│       └── 5-BCPH2/              6 WebP images
+│   │       ├── 5-BCPH2/              6 WebP images
+│   │       └── 6-NHMH/               7 WebP images (4:3 source — see gallery note)
 │   └── content/
 ├── css/
 │   ├── style.css           Global reset, home page, transitions
@@ -66,7 +67,9 @@ Portfolio website for Hemsworth Architecture, a Vancouver-based architecture fir
     ├── upper-skeena-rec-centre.html
     ├── leon-lebeniste.html
     ├── bc-passive-house-factory.html
-    └── 1-lonsdale.html
+    ├── 1-lonsdale.html
+    ├── bc-passive-house-factory-addition.html
+    └── new-hazelton-municipal-hall.html
 ```
 
 ## Pages — Status
@@ -74,7 +77,7 @@ Portfolio website for Hemsworth Architecture, a Vancouver-based architecture fir
 | Page | Status | Notes |
 |------|--------|-------|
 | Home (`index.html`) | ✅ Complete | Real hero photography, white fade transition, scroll/click nav |
-| Projects (`projects.html`) | ✅ Complete | 4 live projects, placeholders below; desktop sub-nav + mobile scroll strip filter |
+| Projects (`projects.html`) | ✅ Complete | 6 live projects; desktop sub-nav + mobile scroll strip filter |
 | About (`about.html`) | ✅ Complete | Redirects to approach.html |
 | Approach (`approach.html`) | ✅ Complete | Hero image (USRC), practice text, territorial acknowledgement |
 | Team (`team.html`) | ✅ Complete | Hero image (BCPH); two-column grid (300px name+credentials / title); 5 members with credentials |
@@ -85,6 +88,7 @@ Portfolio website for Hemsworth Architecture, a Vancouver-based architecture fir
 | BC Passive House Factory | ✅ Complete | 7 images, awards on separate lines |
 | 1 Lonsdale | ✅ Complete | 8 images, size omitted pending confirmation, award on separate line |
 | BC Passive House Factory Addition | ✅ Complete | 6 images, Territory field, no awards |
+| New Hazelton Municipal Hall | ✅ Complete | 7 images (incl. 1 portrait), Territory field, no awards; page-specific 3:2 gallery override |
 
 ## Project Pages — Pattern
 Each project page follows a consistent structure:
@@ -100,6 +104,7 @@ Each project page follows a consistent structure:
 - Video field: plain `<a href="...">` inside `<dd>` — inherits inline display, no text-transform
 - Image paths all use `../assets/images/projects/...`
 - `object-position` can be overridden inline per-image to frame the shot correctly
+- **Gallery aspect ratio:** Default is 16:9 (set in `project.css`). Most projects use Ema Peter photography delivered at 3:2, which fits well. If a project's photos are 4:3 (e.g. Martin Knowles), the 16:9 container crops ~25% of height — in that case add a page-specific `<style>#gallery-track { aspect-ratio: 3 / 2; }</style>` in the page `<head>` (do NOT edit the shared `project.css`). New Hazelton Municipal Hall uses this override. **Standing guidance: always preview the gallery after building a new project page and check for clipping before committing.**
 
 ## Image Optimisation — Convention
 - Tool: Node.js + sharp (`npm install sharp` already done)
@@ -124,6 +129,7 @@ Each project page follows a consistent structure:
 3. BC Passive House Factory — Industrial ✅
 4. 1 Lonsdale — Public ✅
 5. BC Passive House Factory Addition — Industrial ✅
+6. New Hazelton Municipal Hall — Public ✅
 
 ## Team — Members and Credentials
 
