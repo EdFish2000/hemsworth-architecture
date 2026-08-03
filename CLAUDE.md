@@ -50,7 +50,9 @@ Portfolio website for Hemsworth Architecture, a Vancouver-based architecture fir
 │   │       ├── 3-BCPH/               7 WebP images
 │   │       ├── 4-PH1/                8 WebP images
 │   │       ├── 5-BCPH2/              6 WebP images
-│   │       └── 6-NHMH/               7 WebP images (4:3 source — see gallery note)
+│   │       ├── 6-NHMH/               7 WebP images (4:3 source — see gallery note)
+│   │       ├── 7-PHi1/               7 WebP images (visualizations — Mirage Studio)
+│   │       └── 8-ON5/                Low-res web downloads (ON HOLD — awaiting original KK Law files)
 │   └── content/
 ├── css/
 │   ├── style.css           Global reset, home page, transitions
@@ -69,7 +71,8 @@ Portfolio website for Hemsworth Architecture, a Vancouver-based architecture fir
     ├── bc-passive-house-factory.html
     ├── 1-lonsdale.html
     ├── bc-passive-house-factory-addition.html
-    └── new-hazelton-municipal-hall.html
+    ├── new-hazelton-municipal-hall.html
+    └── ajax-mass-timber-warehouse.html
 ```
 
 ## Pages — Status
@@ -77,7 +80,7 @@ Portfolio website for Hemsworth Architecture, a Vancouver-based architecture fir
 | Page | Status | Notes |
 |------|--------|-------|
 | Home (`index.html`) | ✅ Complete | Real hero photography, white fade transition, scroll/click nav |
-| Projects (`projects.html`) | ✅ Complete | 6 live projects; desktop sub-nav + mobile scroll strip filter |
+| Projects (`projects.html`) | ✅ Complete | 7 live projects; desktop sub-nav + mobile scroll strip filter |
 | About (`about.html`) | ✅ Complete | Redirects to approach.html |
 | Approach (`approach.html`) | ✅ Complete | Hero image (USRC), practice text, territorial acknowledgement |
 | Team (`team.html`) | ✅ Complete | Hero image (BCPH); two-column grid (300px name+credentials / title); 5 members with credentials |
@@ -89,6 +92,8 @@ Portfolio website for Hemsworth Architecture, a Vancouver-based architecture fir
 | 1 Lonsdale | ✅ Complete | 8 images, size omitted pending confirmation, award on separate line |
 | BC Passive House Factory Addition | ✅ Complete | 6 images, Territory field, no awards |
 | New Hazelton Municipal Hall | ✅ Complete | 7 images (incl. 1 portrait), Territory field, no awards; page-specific 3:2 gallery override |
+| Ajax Mass Timber Warehouse | ✅ Complete | 7 images (Mirage Studio visualizations), Territory field, no awards; label is "Visualization" not "Photographer"; Year: "Current" |
+| Ontario and Fifth | ⏸ ON HOLD | Awaiting original high-res KK Law files — images in 8-ON5 are low-res web downloads from naturallywood.com. Page HTML (ontario-and-fifth.html) drafted but NOT committed. Size unverified: Word doc says 936 m², external sources say 840 m². Model photo still to be added. Project video: https://youtu.be/B23XVhen9z0 (to embed when page is built). |
 
 ## Project Pages — Pattern
 Each project page follows a consistent structure:
