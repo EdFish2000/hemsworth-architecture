@@ -226,6 +226,16 @@
   text-align: justify;
 }
 
+.description-body a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.description-body a:hover {
+  color: #0a0a0a;
+}
+
 /* ─── Back link ─────────────────────────────────────────────────── */
 
 #back-link {
