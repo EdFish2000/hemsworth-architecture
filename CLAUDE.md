@@ -153,15 +153,18 @@ Each project page follows a consistent structure:
 2. Leon Lebeniste — Industrial ✅
 3. BC Passive House Factory — Industrial ✅
 4. 1 Lonsdale — Public ✅
-5. BC Passive House Factory Addition — Industrial ✅
-6. New Hazelton Municipal Hall — Public ✅
-7. Ajax Mass Timber Warehouse — Industrial (in-progress) ✅
-8. Morgan Elementary School — Education ✅
+5. Ajax Mass Timber Warehouse — in-progress ✅
+6. Indigenous Aquatic Research Centre — First Nations (in-progress) ✅
+7. Whistler Museum and Archives — Public (in-progress) ✅
+8. BC Passive House Factory Addition — Industrial ✅
 9. Fleetwood Park Secondary School — Education (in-progress) ✅
-10. Wedge Lane Residence — Residential ✅
-11. Whistler Museum and Archives — Public (in-progress) ✅
-12. Indigenous Aquatic Research Centre — First Nations (in-progress) ✅
-13. Listen — Stanley Park — Other ✅
+10. New Hazelton Municipal Hall — Public ✅
+11. Wedge Lane Residence — Residential ✅
+12. Morgan Elementary School — Education ✅
+13. Whistler Skiers Chapel — in-progress ✅
+14. Listen — Stanley Park — Other ✅
+
+**Pending:** Ontario and Fifth will slot in at position 5 or 6 once original KK Law photos arrive. It is the only project page not yet built.
 
 ## Team — Members and Credentials
 
