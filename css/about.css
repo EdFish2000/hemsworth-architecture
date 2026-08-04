@@ -295,6 +295,27 @@
   color: #0a0a0a;
 }
 
+/* ─── All Projects back link ─────────────────────────────────────── */
+
+#back-link {
+  padding-top: 40px;
+}
+
+#back-link a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.58rem;
+  font-weight: 300;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.35);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+#back-link a:hover {
+  color: #0a0a0a;
+}
+
 /* ─── Responsive ─────────────────────────────────────────────────── */
 
 /* Hide hamburger on desktop — mobile only */
