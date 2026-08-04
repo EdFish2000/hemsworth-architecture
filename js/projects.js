@@ -14,29 +14,44 @@
   const catLinks = document.querySelectorAll('.cat-link');
   const cards    = document.querySelectorAll('.project-card');
 
-  if (cards.length > 0) {
-    catLinks.forEach(function (link) {
-      link.addEventListener('click', function (e) {
-        e.preventDefault();
+  if (cards.length === 0) return;
 
-        // Update active state — re-query live DOM to guarantee stale refs don't persist
-        document.querySelectorAll('.cat-link').forEach(function (l) {
-          l.classList.remove('active');
-        });
-        link.classList.add('active');
+  function applyFilter(selected) {
+    // Active state — match by data-cat value
+    catLinks.forEach(function (l) {
+      l.classList.toggle('active', l.dataset.cat === selected);
+    });
 
-        const selected = link.dataset.cat;
+    // Show / hide cards
+    cards.forEach(function (card) {
+      const cats = (card.dataset.cat || '').split(' ');
+      if (selected === 'all' || cats.includes(selected)) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
 
-        cards.forEach(function (card) {
-          const cats = (card.dataset.cat || '').split(' ');
-          if (selected === 'all' || cats.includes(selected)) {
-            card.classList.remove('hidden');
-          } else {
-            card.classList.add('hidden');
-          }
-        });
-      });
+    // Scroll to top — defer one frame so display:none layout changes are committed first
+    requestAnimationFrame(function () {
+      var grid = document.getElementById('project-grid');
+      if (grid) grid.scrollTop = 0; // desktop: grid is the scroll container
+      window.scrollTo(0, 0);        // mobile: html/body scrolls
     });
   }
+
+  // ── Apply filter from URL on page load (cross-page navigation) ─
+  var catParam = new URLSearchParams(location.search).get('cat');
+  if (catParam) {
+    applyFilter(catParam);
+  }
+
+  // ── Click handler — in-page filtering on projects.html ────────
+  catLinks.forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      applyFilter(link.dataset.cat);
+    });
+  });
 
 })();

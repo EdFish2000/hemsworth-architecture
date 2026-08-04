@@ -6,47 +6,13 @@
   <title>Contact — Hemsworth Architecture</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/projects.css">
+  <link rel="stylesheet" href="css/project.css">
   <link rel="stylesheet" href="css/about.css">
 </head>
-<body class="projects-page about-page">
+<body class="projects-page project-page">
 
   <!-- Page entrance overlay -->
   <div id="page-overlay"></div>
-
-  <!-- Left sidebar -->
-  <aside id="sidebar">
-    <a href="index.html" id="sidebar-wordmark">
-      <img src="assets/logo/Hemsworth-Logo-dark.svg" alt="Hemsworth Architecture">
-    </a>
-
-    <div id="mobile-nav" aria-hidden="true">
-      <a href="projects.html">Projects</a>
-      <a href="approach.html">Approach</a>
-      <a href="team.html">Team</a>
-      <a href="recognition.html">Recognition</a>
-      <a href="contact.html">Contact</a>
-    </div>
-
-    <nav id="site-nav">
-      <ul>
-        <li>
-          <a href="projects.html" class="site-link">Projects</a>
-          <ul class="sub-nav">
-            <li><a href="#" class="cat-link" data-cat="all">All</a></li>
-            <li><a href="#" class="cat-link" data-cat="mass-timber">Mass Timber</a></li>
-            <li><a href="#" class="cat-link" data-cat="industrial">Industrial</a></li>
-            <li><a href="#" class="cat-link" data-cat="public">Public</a></li>
-            <li><a href="#" class="cat-link" data-cat="education">Education</a></li>
-          </ul>
-        </li>
-        <li><a href="approach.html" class="site-link">Approach</a></li>
-        <li><a href="team.html" class="site-link">Team</a></li>
-        <li><a href="recognition.html" class="site-link">Recognition</a></li>
-        <li><a href="contact.html" class="site-link active">Contact</a></li>
-      </ul>
-    </nav>
-
-  </aside>
 
   <!-- Hamburger menu — top right -->
   <div id="hamburger">
@@ -64,38 +30,96 @@
     </nav>
   </div>
 
+  <!-- Left sidebar -->
+  <aside id="sidebar">
+
+    <a href="index.html" id="sidebar-wordmark">
+      <img src="assets/logo/Hemsworth-Logo-dark.svg" alt="Hemsworth Architecture">
+    </a>
+
+    <div id="mobile-nav" aria-hidden="true">
+      <a href="projects.html">Projects</a>
+      <a href="approach.html">Approach</a>
+      <a href="team.html">Team</a>
+      <a href="recognition.html">Recognition</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <nav id="site-nav">
+      <ul>
+        <li>
+          <a href="projects.html" class="site-link">Projects</a>
+          <ul class="sub-nav">
+            <li><a href="projects.html" class="cat-link" data-cat="all">All</a></li>
+            <li><a href="projects.html?cat=mass-timber" class="cat-link" data-cat="mass-timber">Mass Timber</a></li>
+            <li><a href="projects.html?cat=industrial" class="cat-link" data-cat="industrial">Industrial</a></li>
+            <li><a href="projects.html?cat=public" class="cat-link" data-cat="public">Public</a></li>
+            <li><a href="projects.html?cat=education" class="cat-link" data-cat="education">Education</a></li>
+          </ul>
+        </li>
+        <li><a href="approach.html" class="site-link">Approach</a></li>
+        <li><a href="team.html" class="site-link">Team</a></li>
+        <li><a href="recognition.html" class="site-link">Recognition</a></li>
+        <li><a href="contact.html" class="site-link active">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div id="sidebar-footer">
+      <span>Vancouver, BC</span>
+    </div>
+
+  </aside>
+
   <!-- Main content -->
-  <main id="about-main">
+  <main id="project-main">
 
-    <!-- Editorial image -->
-    <div class="editorial-image">
-      <img src="assets/images/projects/2-Leon-Lebeniste/13-LL1-0210.webp" alt="Rooftop gathering space">
-    </div>
+    <!-- Image -->
+    <section id="gallery">
+      <div id="gallery-track">
+        <div class="gallery-slide active">
+          <img src="assets/images/projects/1-USRC/20-USRC-Seating-Area.webp" alt="Upper Skeena Recreation Centre seating area">
+        </div>
+      </div>
+    </section>
 
-    <!-- Two-column contact layout -->
-    <div class="contact-grid">
+    <!-- Page content -->
+    <section id="project-info">
 
-      <div class="contact-col">
-        <p>Hemsworth Architecture<br>
-        211-1551 Johnston Street<br>
-        Granville Island, Vancouver, BC V6H 3R9</p>
+      <h1 class="project-title">Contact</h1>
 
-        <p>We work in a hybrid studio environment with our main studio on Granville Island.</p>
+      <div id="project-info-columns">
+
+        <div id="project-facts"></div>
+
+        <div id="project-description">
+          <div class="contact-grid">
+
+            <div class="contact-col">
+              <p>Hemsworth Architecture<br>
+              211-1551 Johnston Street<br>
+              Granville Island, Vancouver, BC V6H 3R9</p>
+
+              <p>We work in a hybrid studio environment with our main studio on Granville Island.</p>
+            </div>
+
+            <div class="contact-col">
+              <p><a href="tel:7788382845">778-838-2845</a><br>
+              <a href="mailto:office@hemswortharchitecture.com">office@hemswortharchitecture.com</a><br>
+              <a href="mailto:employment@hemswortharchitecture.com">employment@hemswortharchitecture.com</a></p>
+
+              <p>We are always looking for talented people to join our team.</p>
+
+              <p><a href="https://www.instagram.com/hemswortharchitecture/" target="_blank" rel="noopener">@hemswortharchitecture</a></p>
+            </div>
+
+          </div>
+        </div>
+
       </div>
 
-      <div class="contact-col">
-        <p><a href="tel:7788382845">778-838-2845</a><br>
-        <a href="mailto:office@hemswortharchitecture.com">office@hemswortharchitecture.com</a><br>
-        <a href="mailto:employment@hemswortharchitecture.com">employment@hemswortharchitecture.com</a></p>
+    </section>
 
-        <p>We are always looking for talented people to join our team.</p>
-
-        <p><a href="https://www.instagram.com/hemswortharchitecture/" target="_blank" rel="noopener">@hemswortharchitecture</a></p>
-      </div>
-
-    </div>
-
-    <!-- All Projects -->
+    <!-- Back to projects -->
     <div id="back-link">
       <a href="projects.html">← All Projects</a>
     </div>

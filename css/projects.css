@@ -224,6 +224,7 @@
   margin-left: 220px;
   height: 100vh;
   overflow-y: auto;
+  overflow-anchor: none;
   padding: 80px 80px 120px;
   display: grid;
   grid-template-columns: 1fr;

@@ -6,47 +6,13 @@
   <title>Team — Hemsworth Architecture</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/projects.css">
+  <link rel="stylesheet" href="css/project.css">
   <link rel="stylesheet" href="css/about.css">
 </head>
-<body class="projects-page about-page">
+<body class="projects-page project-page">
 
   <!-- Page entrance overlay -->
   <div id="page-overlay"></div>
-
-  <!-- Left sidebar -->
-  <aside id="sidebar">
-    <a href="index.html" id="sidebar-wordmark">
-      <img src="assets/logo/Hemsworth-Logo-dark.svg" alt="Hemsworth Architecture">
-    </a>
-
-    <div id="mobile-nav" aria-hidden="true">
-      <a href="projects.html">Projects</a>
-      <a href="approach.html">Approach</a>
-      <a href="team.html">Team</a>
-      <a href="recognition.html">Recognition</a>
-      <a href="contact.html">Contact</a>
-    </div>
-
-    <nav id="site-nav">
-      <ul>
-        <li>
-          <a href="projects.html" class="site-link">Projects</a>
-          <ul class="sub-nav">
-            <li><a href="#" class="cat-link" data-cat="all">All</a></li>
-            <li><a href="#" class="cat-link" data-cat="mass-timber">Mass Timber</a></li>
-            <li><a href="#" class="cat-link" data-cat="industrial">Industrial</a></li>
-            <li><a href="#" class="cat-link" data-cat="public">Public</a></li>
-            <li><a href="#" class="cat-link" data-cat="education">Education</a></li>
-          </ul>
-        </li>
-        <li><a href="approach.html" class="site-link">Approach</a></li>
-        <li><a href="team.html" class="site-link active">Team</a></li>
-        <li><a href="recognition.html" class="site-link">Recognition</a></li>
-        <li><a href="contact.html" class="site-link">Contact</a></li>
-      </ul>
-    </nav>
-
-  </aside>
 
   <!-- Hamburger menu — top right -->
   <div id="hamburger">
@@ -64,54 +30,112 @@
     </nav>
   </div>
 
-  <!-- Main content -->
-  <main id="about-main">
+  <!-- Left sidebar -->
+  <aside id="sidebar">
 
-    <!-- Editorial image -->
-    <div class="editorial-image">
-      <img src="assets/images/projects/3-BCPH/03-BCPH.webp" alt="Interior workspace">
+    <a href="index.html" id="sidebar-wordmark">
+      <img src="assets/logo/Hemsworth-Logo-dark.svg" alt="Hemsworth Architecture">
+    </a>
+
+    <div id="mobile-nav" aria-hidden="true">
+      <a href="projects.html">Projects</a>
+      <a href="approach.html">Approach</a>
+      <a href="team.html">Team</a>
+      <a href="recognition.html">Recognition</a>
+      <a href="contact.html">Contact</a>
     </div>
 
-    <!-- Team -->
-    <ul class="team-list">
-      <li class="team-member">
-        <div class="member-name-block">
-          <span class="member-name">John Hemsworth</span>
-          <span class="member-credentials">Architect AIBC | OAA | M.ARCH | B.ENG | LEED AP | MRAIC</span>
-        </div>
-        <span class="member-role">Principal, Design Lead</span>
-      </li>
-      <li class="team-member">
-        <div class="member-name-block">
-          <span class="member-name">Dean Shwedyk</span>
-          <span class="member-credentials">MAA | M.ARCH | LEED AP</span>
-        </div>
-        <span class="member-role">Senior Associate, Project Lead</span>
-      </li>
-      <li class="team-member">
-        <div class="member-name-block">
-          <span class="member-name">Niall Jones</span>
-          <span class="member-credentials">Associate M.ARCH | NZIA | CPHD</span>
-        </div>
-        <span class="member-role">Associate, Project Lead</span>
-      </li>
-      <li class="team-member">
-        <div class="member-name-block">
-          <span class="member-name">Jorne van der Voorn</span>
-          <span class="member-credentials">Architect AIBC | M.ARCH | B.ENG</span>
-        </div>
-        <span class="member-role">Project Lead</span>
-      </li>
-      <li class="team-member">
-        <div class="member-name-block">
-          <span class="member-name">Rebecca Boese</span>
-          <span class="member-credentials">Senior Designer BSc Arch. | RIBA</span>
-        </div>
-        <span class="member-role">Project Lead</span>
-      </li>
-    </ul>
+    <nav id="site-nav">
+      <ul>
+        <li>
+          <a href="projects.html" class="site-link">Projects</a>
+          <ul class="sub-nav">
+            <li><a href="projects.html" class="cat-link" data-cat="all">All</a></li>
+            <li><a href="projects.html?cat=mass-timber" class="cat-link" data-cat="mass-timber">Mass Timber</a></li>
+            <li><a href="projects.html?cat=industrial" class="cat-link" data-cat="industrial">Industrial</a></li>
+            <li><a href="projects.html?cat=public" class="cat-link" data-cat="public">Public</a></li>
+            <li><a href="projects.html?cat=education" class="cat-link" data-cat="education">Education</a></li>
+          </ul>
+        </li>
+        <li><a href="approach.html" class="site-link">Approach</a></li>
+        <li><a href="team.html" class="site-link active">Team</a></li>
+        <li><a href="recognition.html" class="site-link">Recognition</a></li>
+        <li><a href="contact.html" class="site-link">Contact</a></li>
+      </ul>
+    </nav>
 
-    <!-- All Projects -->
+    <div id="sidebar-footer">
+      <span>Vancouver, BC</span>
+    </div>
+
+  </aside>
+
+  <!-- Main content -->
+  <main id="project-main">
+
+    <!-- Image -->
+    <section id="gallery">
+      <div id="gallery-track">
+        <div class="gallery-slide active">
+          <img src="assets/images/projects/1-USRC/19-USRC-Handshake.webp" alt="Players shaking hands on the ice">
+        </div>
+      </div>
+    </section>
+
+    <!-- Page content -->
+    <section id="project-info">
+
+      <h1 class="project-title">Team</h1>
+
+      <div id="project-info-columns">
+
+        <div id="project-facts"></div>
+
+        <div id="project-description">
+          <ul class="team-list">
+            <li class="team-member">
+              <div class="member-name-block">
+                <span class="member-name">John Hemsworth</span>
+                <span class="member-credentials">Architect AIBC | OAA | M.ARCH | B.ENG | LEED AP | MRAIC</span>
+              </div>
+              <span class="member-role">Principal, Design Lead</span>
+            </li>
+            <li class="team-member">
+              <div class="member-name-block">
+                <span class="member-name">Dean Shwedyk</span>
+                <span class="member-credentials">MAA | M.ARCH | LEED AP</span>
+              </div>
+              <span class="member-role">Senior Associate, Project Lead</span>
+            </li>
+            <li class="team-member">
+              <div class="member-name-block">
+                <span class="member-name">Niall Jones</span>
+                <span class="member-credentials">Associate M.ARCH | NZIA | CPHD</span>
+              </div>
+              <span class="member-role">Associate, Project Lead</span>
+            </li>
+            <li class="team-member">
+              <div class="member-name-block">
+                <span class="member-name">Jorne van der Voorn</span>
+                <span class="member-credentials">Architect AIBC | M.ARCH | B.ENG</span>
+              </div>
+              <span class="member-role">Project Lead</span>
+            </li>
+            <li class="team-member">
+              <div class="member-name-block">
+                <span class="member-name">Rebecca Boese</span>
+                <span class="member-credentials">Senior Designer BSc Arch. | RIBA</span>
+              </div>
+              <span class="member-role">Project Lead</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Back to projects -->
     <div id="back-link">
       <a href="projects.html">← All Projects</a>
     </div>

@@ -6,16 +6,34 @@
   <title>Recognition — Hemsworth Architecture</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/projects.css">
+  <link rel="stylesheet" href="css/project.css">
   <link rel="stylesheet" href="css/about.css">
   <link rel="stylesheet" href="css/recognition.css">
 </head>
-<body class="projects-page recognition-page">
+<body class="projects-page project-page">
 
   <!-- Page entrance overlay -->
   <div id="page-overlay"></div>
 
-  <!-- Left sidebar — wordmark only -->
+  <!-- Hamburger menu — top right -->
+  <div id="hamburger">
+    <button id="hamburger-btn" aria-label="Menu" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <nav id="hamburger-nav" aria-hidden="true">
+      <ul>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="approach.html">Approach</a></li>
+        <li><a href="recognition.html">Recognition</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Left sidebar -->
   <aside id="sidebar">
+
     <a href="index.html" id="sidebar-wordmark">
       <img src="assets/logo/Hemsworth-Logo-dark.svg" alt="Hemsworth Architecture">
     </a>
@@ -33,11 +51,11 @@
         <li>
           <a href="projects.html" class="site-link">Projects</a>
           <ul class="sub-nav">
-            <li><a href="#" class="cat-link" data-cat="all">All</a></li>
-            <li><a href="#" class="cat-link" data-cat="mass-timber">Mass Timber</a></li>
-            <li><a href="#" class="cat-link" data-cat="industrial">Industrial</a></li>
-            <li><a href="#" class="cat-link" data-cat="public">Public</a></li>
-            <li><a href="#" class="cat-link" data-cat="education">Education</a></li>
+            <li><a href="projects.html" class="cat-link" data-cat="all">All</a></li>
+            <li><a href="projects.html?cat=mass-timber" class="cat-link" data-cat="mass-timber">Mass Timber</a></li>
+            <li><a href="projects.html?cat=industrial" class="cat-link" data-cat="industrial">Industrial</a></li>
+            <li><a href="projects.html?cat=public" class="cat-link" data-cat="public">Public</a></li>
+            <li><a href="projects.html?cat=education" class="cat-link" data-cat="education">Education</a></li>
           </ul>
         </li>
         <li><a href="approach.html" class="site-link">Approach</a></li>
@@ -47,122 +65,125 @@
       </ul>
     </nav>
 
+    <div id="sidebar-footer">
+      <span>Vancouver, BC</span>
+    </div>
+
   </aside>
 
-  <!-- Hamburger menu — top right -->
-  <div id="hamburger">
-    <button id="hamburger-btn" aria-label="Menu" aria-expanded="false">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </button>
-    <nav id="hamburger-nav" aria-hidden="true">
-      <ul>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="recognition.html">Recognition</a></li>
-      </ul>
-    </nav>
-  </div>
-
   <!-- Main content -->
-  <main id="recognition-main">
+  <main id="project-main">
 
-    <!-- Awards -->
-    <section class="recognition-section">
+    <!-- Image -->
+    <section id="gallery">
+      <div id="gallery-track">
+        <div class="gallery-slide active">
+          <img src="assets/images/projects/3-BCPH/00-BCPH.webp" alt="BC Passive House Factory exterior" style="object-position: center 75%;">
+        </div>
+      </div>
+    </section>
 
-      <div class="rec-label">Awards</div>
+    <!-- Page content -->
+    <section id="project-info">
 
-      <ul class="rec-entries">
-        <li class="rec-entry">
-          <span class="rec-name">Governor General's Medal in Architecture<span class="rec-project"> — Upper Skeena Recreation Centre</span></span>
-          <span class="rec-year">2024</span>
-        </li>
-        <li class="rec-entry">
-          <span class="rec-name">AIBC Innovation Award<span class="rec-project"> — BC Passive House Factory</span></span>
-          <span class="rec-year">2023</span>
-        </li>
-        <li class="rec-entry">
-          <span class="rec-name">Wood Design &amp; Building Award, Institutional<span class="rec-project"> — Upper Skeena Recreation Centre</span></span>
-          <span class="rec-year">2023</span>
-        </li>
-        <li class="rec-entry">
-          <span class="rec-name">Canadian Architect Award of Excellence<span class="rec-project"> — BC Passive House Factory</span></span>
-          <span class="rec-year">2022</span>
-        </li>
-        <li class="rec-entry">
-          <span class="rec-name">Passive House Canada Award, Industrial Category</span>
-          <span class="rec-year">2022</span>
-        </li>
-        <li class="rec-entry">
-          <span class="rec-name">LEED Canada Platinum Certification<span class="rec-project"> — BC Passive House Factory</span></span>
-          <span class="rec-year">2021</span>
-        </li>
-      </ul>
+      <h1 class="project-title">Recognition</h1>
+
+      <div id="project-info-columns">
+
+        <div id="project-facts"></div>
+
+        <div id="project-description">
+
+          <ul class="rec-entries">
+            <li class="rec-entry">
+              <span class="rec-name">Award of Merit (Commercial) — Masonry Design Awards</span>
+              <span class="rec-project">1 Lonsdale</span>
+              <span class="rec-year">2024</span>
+            </li>
+            <li class="rec-entry">
+              <span class="rec-name">Architecture Master Prize — Best of Best, Industrial Buildings</span>
+              <span class="rec-project">Leon Lebeniste</span>
+              <span class="rec-year">2023</span>
+            </li>
+            <li class="rec-entry">
+              <span class="rec-name">Canadian Wood Works Awards (BC Awards)</span>
+              <span class="rec-project">Leon Lebeniste</span>
+              <span class="rec-year">2023</span>
+            </li>
+            <li class="rec-entry">
+              <span class="rec-name">SAB Green Building Award — Commercial/Industrial (Small)</span>
+              <span class="rec-project">1 Lonsdale</span>
+              <span class="rec-year">2022</span>
+            </li>
+            <li class="rec-entry">
+              <span class="rec-name">Canadian Wood Works Awards (BC Awards)</span>
+              <span class="rec-project">1 Lonsdale</span>
+              <span class="rec-year">2022</span>
+            </li>
+            <li class="rec-entry">
+              <span class="rec-name">Lieutenant-Governor of BC Award</span>
+              <span class="rec-project">Upper Skeena Recreation Centre</span>
+              <span class="rec-year">2021</span>
+            </li>
+            <li class="rec-entry">
+              <span class="rec-name">Architectural Foundation of BC — Design Excellence</span>
+              <span class="rec-project">Upper Skeena Recreation Centre</span>
+              <span class="rec-year">2021</span>
+            </li>
+            <li class="rec-entry">
+              <span class="rec-name">Architectural Foundation of BC — Innovation Award</span>
+              <span class="rec-project">1 Lonsdale</span>
+              <span class="rec-year">2021</span>
+            </li>
+            <li class="rec-entry">
+              <span class="rec-name">Architizer A+A Awards — Sports &amp; Recreation: Stadium / Arena — Finalist</span>
+              <span class="rec-project">Upper Skeena Recreation Centre</span>
+              <span class="rec-year">2021</span>
+            </li>
+            <li class="rec-entry">
+              <span class="rec-name">North American Wood Design Award (Sustainable Forestry Initiative)</span>
+              <span class="rec-project">Upper Skeena Recreation Centre</span>
+              <span class="rec-year">2020</span>
+            </li>
+            <li class="rec-entry">
+              <span class="rec-name">North American Wood Design Award (Merit)</span>
+              <span class="rec-project">Upper Skeena Recreation Centre</span>
+              <span class="rec-year">2020</span>
+            </li>
+            <li class="rec-entry">
+              <span class="rec-name">Governor General's Medal in Architecture</span>
+              <span class="rec-project">BC Passive House Factory</span>
+              <span class="rec-year">2016</span>
+            </li>
+            <li class="rec-entry">
+              <span class="rec-name">American Architecture Prize (Bronze)</span>
+              <span class="rec-project">BC Passive House Factory</span>
+              <span class="rec-year">2016</span>
+            </li>
+            <li class="rec-entry">
+              <span class="rec-name">AIBC Innovation Award</span>
+              <span class="rec-project">BC Passive House Factory</span>
+              <span class="rec-year">2015</span>
+            </li>
+            <li class="rec-entry">
+              <span class="rec-name">Wood Design Award — Environmental</span>
+              <span class="rec-project">BC Passive House Factory</span>
+              <span class="rec-year">2015</span>
+            </li>
+            <li class="rec-entry">
+              <span class="rec-name">North American Wood Design Award (Merit)</span>
+              <span class="rec-project">BC Passive House Factory</span>
+              <span class="rec-year">2014</span>
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
 
     </section>
 
-    <!-- Publications -->
-    <section class="recognition-section">
-
-      <div class="rec-label">Publications</div>
-
-      <ul class="rec-entries">
-        <li class="rec-entry">
-          <span class="rec-name">Canadian Architect<span class="rec-project"> — "Passive Systems at an Industrial Scale"</span></span>
-          <span class="rec-year">2024</span>
-        </li>
-        <li class="rec-entry">
-          <span class="rec-name">Azure Magazine<span class="rec-project"> — "The Upper Skeena Recreation Centre"</span></span>
-          <span class="rec-year">2023</span>
-        </li>
-        <li class="rec-entry">
-          <span class="rec-name">Architectural Record<span class="rec-project"> — "Mass Timber in Northern BC"</span></span>
-          <span class="rec-year">2023</span>
-        </li>
-        <li class="rec-entry">
-          <span class="rec-name">Domus<span class="rec-project"> — "Community Infrastructure and Climate"</span></span>
-          <span class="rec-year">2022</span>
-        </li>
-        <li class="rec-entry">
-          <span class="rec-name">Mark Magazine<span class="rec-project"> — "High-Performance Envelopes"</span></span>
-          <span class="rec-year">2022</span>
-        </li>
-      </ul>
-
-    </section>
-
-    <!-- Press -->
-    <section class="recognition-section">
-
-      <div class="rec-label">Press</div>
-
-      <ul class="rec-entries">
-        <li class="rec-entry">
-          <span class="rec-name">The Globe and Mail<span class="rec-project"> — "A BC Firm Redefines the Factory"</span></span>
-          <span class="rec-year">2024</span>
-        </li>
-        <li class="rec-entry">
-          <span class="rec-name">CBC News<span class="rec-project"> — "Upper Skeena Centre Wins National Prize"</span></span>
-          <span class="rec-year">2023</span>
-        </li>
-        <li class="rec-entry">
-          <span class="rec-name">Vancouver Sun<span class="rec-project"> — "Architecture That Performs"</span></span>
-          <span class="rec-year">2023</span>
-        </li>
-        <li class="rec-entry">
-          <span class="rec-name">Dezeen<span class="rec-project"> — "BC Passive House Factory"</span></span>
-          <span class="rec-year">2022</span>
-        </li>
-        <li class="rec-entry">
-          <span class="rec-name">Monocle<span class="rec-project"> — "Building Better in British Columbia"</span></span>
-          <span class="rec-year">2022</span>
-        </li>
-      </ul>
-
-    </section>
-
-    <!-- All Projects -->
+    <!-- Back to projects -->
     <div id="back-link">
       <a href="projects.html">← All Projects</a>
     </div>
