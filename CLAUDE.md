@@ -140,12 +140,14 @@ Each project page follows a consistent structure:
 - Original source JPGs are committed alongside WebPs
 
 ## projects.html — Category Filter
-- Categories: `in-progress`, `first-nations`, `public`, `industrial`, `commercial`, `education`, `residential`, `other`, `all`
-- Cards use `data-cat="..."` matching the above slugs
+- Categories: `all`, `first-nations`, `mass-timber`, `public`, `education`, `industrial`
+- Cards use `data-cat="..."` with space-separated values for multi-category (e.g. `data-cat="first-nations mass-timber public"`)
+- Wedge Lane and Listen — Stanley Park have `data-cat=""` (no category — visible under All only)
+- ON5 categories TBD when added
 - Desktop: filters in `.sub-nav` nested under Projects in `#site-nav`
 - Mobile: filters in `#mobile-filters` strip (horizontal scroll, no wrap, hidden on desktop)
 - Active state managed by JS — do not hardcode `active` class on any filter link
-- Filter driven by click events via `projects.js`
+- Filter JS uses `.split(' ').includes(selected)` to handle multi-value data-cat
 
 ## projects.html — Current Grid Order
 

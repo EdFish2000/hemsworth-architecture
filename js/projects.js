@@ -28,7 +28,8 @@
         const selected = link.dataset.cat;
 
         cards.forEach(function (card) {
-          if (selected === 'all' || card.dataset.cat === selected) {
+          const cats = (card.dataset.cat || '').split(' ');
+          if (selected === 'all' || cats.includes(selected)) {
             card.classList.remove('hidden');
           } else {
             card.classList.add('hidden');
