@@ -57,7 +57,8 @@ Portfolio website for Hemsworth Architecture, a Vancouver-based architecture fir
 │   │       ├── 10-FLPS/              3 WebP images (rendering + model + session)
 │   │       ├── 11-WEDGE/             6 WebP images (incl. 1 drawing)
 │   │       ├── 12-WMAS/              6 WebP images (3 renderings + 2 process + 1 composite)
-│   │       └── 13-WWKO/              3 WebP images (2 renderings + 1 process)
+│   │       ├── 13-WWKO/              3 WebP images (2 renderings + 1 process)
+│   │       └── 14-Stanley/           6 WebP images (firm photography, 2008)
 │   └── content/
 ├── css/
 │   ├── style.css           Global reset, home page, transitions
@@ -82,7 +83,8 @@ Portfolio website for Hemsworth Architecture, a Vancouver-based architecture fir
     ├── fleetwood-park-secondary-school.html
     ├── wedge-lane.html
     ├── whistler-museum-and-archives.html
-    └── indigenous-aquatic-research-centre.html
+    ├── indigenous-aquatic-research-centre.html
+    └── listen-stanley-park.html
 ```
 
 ## Pages — Status
@@ -90,7 +92,7 @@ Portfolio website for Hemsworth Architecture, a Vancouver-based architecture fir
 | Page | Status | Notes |
 |------|--------|-------|
 | Home (`index.html`) | ✅ Complete | Real hero photography, white fade transition, scroll/click nav |
-| Projects (`projects.html`) | ✅ Complete | 12 live projects; desktop sub-nav + mobile scroll strip filter |
+| Projects (`projects.html`) | ✅ Complete | 13 live projects; desktop sub-nav + mobile scroll strip filter |
 | About (`about.html`) | ✅ Complete | Redirects to approach.html |
 | Approach (`approach.html`) | ✅ Complete | Hero image (USRC), practice text, territorial acknowledgement |
 | Team (`team.html`) | ✅ Complete | Hero image (BCPH); two-column grid (300px name+credentials / title); 5 members with credentials |
@@ -108,6 +110,7 @@ Portfolio website for Hemsworth Architecture, a Vancouver-based architecture fir
 | Wedge Lane Residence | ✅ Complete | 6 images (incl. 1 drawing as portrait+white bg), Territory field, internal link to BCPH |
 | Whistler Museum and Archives | ✅ Complete | 6 images (3 renderings + 2 process + 1 model composite), Territory field, label "Visualization", Year: "Current" |
 | Indigenous Aquatic Research Centre | ✅ Complete | 3 images (2 renderings + 1 process), Territory field, Client field, label "Visualization", Year: "Current" |
+| Listen — Stanley Park | ✅ Complete | 6 images (firm photography, 2008), Collaboration field, no size/photographer/awards; panoramic cover as portrait+white bg |
 | Ontario and Fifth | ⏸ ON HOLD | Awaiting original high-res KK Law files — images in 8-ON5 are low-res web downloads from naturallywood.com. Page HTML (ontario-and-fifth.html) drafted but NOT committed. Size unverified: Word doc says 936 m², external sources say 840 m². Model photo still to be added. Project video: https://youtu.be/B23XVhen9z0 (to embed when page is built). |
 
 ## Project Pages — Pattern
@@ -119,8 +122,9 @@ Each project page follows a consistent structure:
 - Navigation zones: `#zone-prev` and `#zone-next` divs inside `#gallery-track` (full-height left/right halves); dot indicators via `#gallery-dots` (populated by JS — no manual count needed)
 - Sidebar: site-nav with `class="site-link active"` on Projects link; `.sub-nav` present without `expanded` (toggle handled by `about.js`)
 - Info panel: `<h1 class="project-title">` is a direct child of `#project-info` (full-width, above the grid); `#project-info-columns` wraps `#project-facts` and `#project-description` side by side; `#project-facts` starts directly with `<dl class="facts-list">` — no `<h3>` heading
-- Fields in order (omit any that don't apply): Location, Territory, Client, Year, Size, Photographer/Visualization, Video, Awards
+- Fields in order (omit any that don't apply): Location, Territory, Client, Collaboration, Year, Size, Photographer/Visualization, Video, Awards
 - Client field: used on Indigenous Aquatic Research Centre; same `<div class="fact-row">` pattern as all other fields — no new CSS needed
+- Collaboration field: used on Listen — Stanley Park; same `<div class="fact-row">` pattern — no new CSS needed
 - Awards format: one `<span class="award-line">` per award inside the `<dd>`, text as "YEAR — AWARD NAME"
 - Video field: plain `<a href="...">` inside `<dd>` — inherits inline display, no text-transform
 - Image paths all use `../assets/images/projects/...`
@@ -157,6 +161,7 @@ Each project page follows a consistent structure:
 10. Wedge Lane Residence — Residential ✅
 11. Whistler Museum and Archives — Public (in-progress) ✅
 12. Indigenous Aquatic Research Centre — First Nations (in-progress) ✅
+13. Listen — Stanley Park — Other ✅
 
 ## Team — Members and Credentials
 
