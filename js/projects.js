@@ -16,13 +16,15 @@
 
   if (cards.length === 0) return;
 
+  var currentCat = 'all';
+
   function applyFilter(selected) {
-    // Active state — match by data-cat value
+    currentCat = selected;
+
     catLinks.forEach(function (l) {
       l.classList.toggle('active', l.dataset.cat === selected);
     });
 
-    // Show / hide cards
     cards.forEach(function (card) {
       const cats = (card.dataset.cat || '').split(' ');
       if (selected === 'all' || cats.includes(selected)) {
@@ -35,8 +37,8 @@
     // Scroll to top — defer one frame so display:none layout changes are committed first
     requestAnimationFrame(function () {
       var grid = document.getElementById('project-grid');
-      if (grid) grid.scrollTop = 0; // desktop: grid is the scroll container
-      window.scrollTo(0, 0);        // mobile: html/body scrolls
+      if (grid) grid.scrollTop = 0;
+      window.scrollTo(0, 0);
     });
   }
 
@@ -44,6 +46,11 @@
   var catParam = new URLSearchParams(location.search).get('cat');
   if (catParam) {
     applyFilter(catParam);
+  } else {
+    // Ensure 'all' is marked active on fresh load
+    catLinks.forEach(function (l) {
+      l.classList.toggle('active', l.dataset.cat === 'all');
+    });
   }
 
   // ── Click handler — in-page filtering on projects.html ────────
@@ -51,6 +58,19 @@
     link.addEventListener('click', function (e) {
       e.preventDefault();
       applyFilter(link.dataset.cat);
+    });
+  });
+
+  // ── Card clicks — carry category context to project pages ─────
+  // When a specific filter is active, append ?cat=<filter> to the
+  // destination URL so the project page knows which sequence to use
+  // for Prev/Next navigation.
+  document.querySelectorAll('.card-link').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      if (currentCat !== 'all') {
+        e.preventDefault();
+        window.location.href = link.getAttribute('href') + '?cat=' + currentCat;
+      }
     });
   });
 

@@ -1,5 +1,63 @@
 /* ─── Hemsworth Architecture — Project Detail Page ─────────────── */
 
+// ── Project registry (matches projects.html grid order) ───────────
+var PROJECTS = [
+  { slug: 'upper-skeena-rec-centre',            cats: ['first-nations','mass-timber','public'] },
+  { slug: 'leon-lebeniste',                     cats: ['mass-timber','industrial'] },
+  { slug: 'bc-passive-house-factory',           cats: ['mass-timber','industrial'] },
+  { slug: '1-lonsdale',                         cats: ['mass-timber','public'] },
+  { slug: 'ajax-mass-timber-warehouse',         cats: ['mass-timber','industrial'] },
+  { slug: 'indigenous-aquatic-research-centre', cats: ['first-nations','mass-timber','public','education'] },
+  { slug: 'whistler-museum-and-archives',       cats: ['mass-timber','public','education'] },
+  { slug: 'bc-passive-house-factory-addition',  cats: ['mass-timber','industrial'] },
+  { slug: 'fleetwood-park-secondary-school',    cats: ['public','education'] },
+  { slug: 'new-hazelton-municipal-hall',        cats: ['mass-timber','public'] },
+  { slug: 'wedge-lane',                         cats: [] },
+  { slug: 'morgan-elementary-school',           cats: ['public','education'] },
+  { slug: 'whistler-skiers-chapel',             cats: ['mass-timber','public'] },
+  { slug: 'listen-stanley-park',                cats: [] },
+];
+
+// ── Prev/Next navigation (category-aware) ─────────────────────────
+// Runs immediately — independent of gallery initialisation so any
+// gallery error cannot prevent navigation links from being set up.
+(function buildProjectNav() {
+  var prevEl = document.getElementById('nav-prev');
+  var allEl  = document.getElementById('nav-all');
+  var nextEl = document.getElementById('nav-next');
+  if (!prevEl || !allEl || !nextEl) return;
+
+  // Derive slug from current filename
+  var parts = window.location.pathname.split('/');
+  var currentSlug = parts[parts.length - 1].replace('.html', '');
+
+  // Category context — default to 'all' if absent or unrecognised
+  var cat = new URLSearchParams(window.location.search).get('cat') || 'all';
+  var validCats = ['all', 'mass-timber', 'industrial', 'public', 'education', 'first-nations'];
+  if (validCats.indexOf(cat) === -1) cat = 'all';
+
+  // Filter to the active category subset
+  var subset = PROJECTS.filter(function (p) {
+    return cat === 'all' || p.cats.indexOf(cat) !== -1;
+  });
+
+  // Find current index in subset
+  var idx = -1;
+  for (var i = 0; i < subset.length; i++) {
+    if (subset[i].slug === currentSlug) { idx = i; break; }
+  }
+  if (idx === -1 || subset.length < 2) return;
+
+  var len      = subset.length;
+  var prevSlug = subset[(idx - 1 + len) % len].slug;
+  var nextSlug = subset[(idx + 1) % len].slug;
+  var suffix   = cat !== 'all' ? '?cat=' + cat : '';
+
+  prevEl.setAttribute('href', '../projects/' + prevSlug + '.html' + suffix);
+  allEl.setAttribute('href',  '../projects.html' + suffix);
+  nextEl.setAttribute('href', '../projects/' + nextSlug + '.html' + suffix);
+}());
+
 (function () {
 
   // ── Desktop gallery ───────────────────────────────────────────
