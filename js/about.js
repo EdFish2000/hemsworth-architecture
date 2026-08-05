@@ -32,7 +32,7 @@
 (function () {
 
   var subNav = document.querySelector('#site-nav .sub-nav');
-  if (!subNav || subNav.classList.contains('expanded')) return;
+  if (!subNav) return;
 
   // Walk siblings of the sub-nav to find the Projects <a> link
   var projectsLink = null;
@@ -47,13 +47,29 @@
   }
   if (!projectsLink) return;
 
-  // Indicator lives inside the link so the whole "PROJECTS +" area is one click target
+  // Auto-expand on project detail pages (identified by #nav-prev presence)
+  // and whenever a ?cat= filter context is carried in the URL
+  var cat = new URLSearchParams(window.location.search).get('cat');
+  var onProjectDetailPage = !!document.getElementById('nav-prev');
+  if (cat || onProjectDetailPage) {
+    subNav.classList.add('expanded');
+  }
+
+  // Highlight the active cat-link when a category context is present
+  if (cat) {
+    var catLinks = subNav.querySelectorAll('.cat-link');
+    for (var j = 0; j < catLinks.length; j++) {
+      catLinks[j].classList.toggle('active', catLinks[j].dataset.cat === cat);
+    }
+  }
+
+  // Indicator: reflect the initial state (expanded or collapsed)
   var indicator = document.createElement('span');
   indicator.className = 'subnav-indicator';
-  indicator.textContent = '+';
+  indicator.textContent = subNav.classList.contains('expanded') ? '−' : '+';
   projectsLink.appendChild(indicator);
 
-  // Clicking PROJECTS toggles the sub-nav; never navigates on non-projects pages
+  // Clicking PROJECTS always toggles the sub-nav; never navigates
   projectsLink.addEventListener('click', function (e) {
     e.preventDefault();
     var isExpanded = subNav.classList.toggle('expanded');

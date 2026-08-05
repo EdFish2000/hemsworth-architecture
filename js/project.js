@@ -6,15 +6,15 @@ var PROJECTS = [
   { slug: 'leon-lebeniste',                     cats: ['mass-timber','industrial'] },
   { slug: 'bc-passive-house-factory',           cats: ['mass-timber','industrial'] },
   { slug: '1-lonsdale',                         cats: ['mass-timber','public'] },
-  { slug: 'ajax-mass-timber-warehouse',         cats: ['mass-timber','industrial'] },
-  { slug: 'indigenous-aquatic-research-centre', cats: ['first-nations','mass-timber','public','education'] },
-  { slug: 'whistler-museum-and-archives',       cats: ['mass-timber','public','education'] },
+  { slug: 'ajax-mass-timber-warehouse',         cats: ['mass-timber','industrial','in-progress'] },
+  { slug: 'indigenous-aquatic-research-centre', cats: ['first-nations','mass-timber','public','education','in-progress'] },
+  { slug: 'whistler-museum-and-archives',       cats: ['mass-timber','public','education','in-progress'] },
   { slug: 'bc-passive-house-factory-addition',  cats: ['mass-timber','industrial'] },
-  { slug: 'fleetwood-park-secondary-school',    cats: ['public','education'] },
+  { slug: 'fleetwood-park-secondary-school',    cats: ['public','education','in-progress'] },
   { slug: 'new-hazelton-municipal-hall',        cats: ['mass-timber','public'] },
   { slug: 'wedge-lane',                         cats: [] },
   { slug: 'morgan-elementary-school',           cats: ['public','education'] },
-  { slug: 'whistler-skiers-chapel',             cats: ['mass-timber','public'] },
+  { slug: 'whistler-skiers-chapel',             cats: ['mass-timber','public','in-progress'] },
   { slug: 'listen-stanley-park',                cats: [] },
 ];
 
@@ -33,7 +33,7 @@ var PROJECTS = [
 
   // Category context — default to 'all' if absent or unrecognised
   var cat = new URLSearchParams(window.location.search).get('cat') || 'all';
-  var validCats = ['all', 'mass-timber', 'industrial', 'public', 'education', 'first-nations'];
+  var validCats = ['all', 'in-progress', 'mass-timber', 'industrial', 'public', 'education', 'first-nations'];
   if (validCats.indexOf(cat) === -1) cat = 'all';
 
   // Filter to the active category subset
