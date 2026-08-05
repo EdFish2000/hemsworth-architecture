@@ -14,8 +14,8 @@ Portfolio website for Hemsworth Architecture, a Vancouver-based architecture fir
 - **Home hero:** Full-bleed, 4-slide crossfade, 6s interval, 1.8s transition; click or scroll navigates to projects
 - **Page transitions:** Slow white dissolve (1.5s each way) between all pages
 - **Projects grid:** Single column, full-width 16:9 images, continuous scroll
-- **Project detail:** Full-width 16:9 gallery; full-height left/right click zones for navigation; arrows edge-aligned, subtle at rest, bolder stroke on hover; dot indicators at bottom; project title full-width above two-column info grid; facts left (labels + values both `rgba(0,0,0,0.38)` grey), description right; no divider lines
-- **Inner pages (Approach, Team, Recognition, Contact):** Left sidebar with site nav; no footer contact links on Approach, Team, Recognition
+- **Project detail:** Full-width 16:9 gallery; full-height left/right click zones for navigation; arrows edge-aligned, subtle at rest, bolder stroke on hover; dot indicators at bottom; project title full-width above two-column info grid; facts left (labels + values both `rgba(0,0,0,0.38)` grey), description right; no divider lines; `← Prev` / `← All Projects` / `Next →` three-link bottom nav, category-aware
+- **Inner pages (Approach, Team, Recognition, Contact):** Left sidebar with site nav; hero image at top; no footer contact links on Approach, Team, Recognition
 - **Mobile (<640px):** Sidebar becomes stacked header; hamburger opens #mobile-nav row in sidebar flow; body scroll enabled; project page restructures to vertical sequence (hero → title/year → description → remaining images → facts); category filters appear as horizontal scroll strip between header and grid on projects.html
 
 ## Tech Stack
@@ -58,7 +58,7 @@ Portfolio website for Hemsworth Architecture, a Vancouver-based architecture fir
 │   │       ├── 11-WEDGE/             6 WebP images (incl. 1 drawing)
 │   │       ├── 12-WMAS/              6 WebP images (3 renderings + 2 process + 1 composite)
 │   │       ├── 13-WWKO/              3 WebP images (2 renderings + 1 process)
-│   │       └── 14-Stanley/           6 WebP images (firm photography, 2008)
+│   │       └── 14-Stanley/           6 WebP images (firm photography, 2008) — rebuilt from JH originals
 │   └── content/
 ├── css/
 │   ├── style.css           Global reset, home page, transitions
@@ -68,22 +68,23 @@ Portfolio website for Hemsworth Architecture, a Vancouver-based architecture fir
 │   └── recognition.css     Recognition page
 ├── js/
 │   ├── main.js             Home page slideshow + navigation
-│   ├── projects.js         Projects page fade-in + category filter
-│   ├── project.js          Gallery zones, dot indicators, keyboard/touch nav, mobile DOM restructure
-│   └── about.js            Hamburger toggle (shared across all inner pages)
+│   ├── projects.js         Projects page fade-in + category filter + ?cat= forwarding on card clicks
+│   ├── project.js          Gallery zones, dots, keyboard/touch nav, category-aware Prev/Next, mobile DOM restructure
+│   └── about.js            Hamburger toggle + sub-nav expand/collapse (shared across all inner pages)
 └── projects/
     ├── upper-skeena-rec-centre.html
     ├── leon-lebeniste.html
     ├── bc-passive-house-factory.html
     ├── 1-lonsdale.html
-    ├── bc-passive-house-factory-addition.html
-    ├── new-hazelton-municipal-hall.html
     ├── ajax-mass-timber-warehouse.html
-    ├── morgan-elementary-school.html
-    ├── fleetwood-park-secondary-school.html
-    ├── wedge-lane.html
-    ├── whistler-museum-and-archives.html
     ├── indigenous-aquatic-research-centre.html
+    ├── whistler-museum-and-archives.html
+    ├── bc-passive-house-factory-addition.html
+    ├── fleetwood-park-secondary-school.html
+    ├── new-hazelton-municipal-hall.html
+    ├── wedge-lane.html
+    ├── morgan-elementary-school.html
+    ├── whistler-skiers-chapel.html
     └── listen-stanley-park.html
 ```
 
@@ -92,7 +93,7 @@ Portfolio website for Hemsworth Architecture, a Vancouver-based architecture fir
 | Page | Status | Notes |
 |------|--------|-------|
 | Home (`index.html`) | ✅ Complete | Real hero photography, white fade transition, scroll/click nav |
-| Projects (`projects.html`) | ✅ Complete | 13 live projects; desktop sub-nav + mobile scroll strip filter |
+| Projects (`projects.html`) | ✅ Complete | 14 live projects; desktop sub-nav + mobile scroll strip filter; ?cat= param forwarded on card clicks |
 | About (`about.html`) | ✅ Complete | Redirects to approach.html |
 | Approach (`approach.html`) | ✅ Complete | Hero image (USRC), practice text, territorial acknowledgement |
 | Team (`team.html`) | ✅ Complete | Hero image (BCPH); two-column grid (300px name+credentials / title); 5 members with credentials |
@@ -100,17 +101,18 @@ Portfolio website for Hemsworth Architecture, a Vancouver-based architecture fir
 | Recognition (`recognition.html`) | ✅ Complete | Awards/Publications/Press; no divider lines; dates in aligned column |
 | Upper Skeena Rec Centre | ✅ Complete | 16 images, Territory field, Video field, awards on separate lines |
 | Leon Lebeniste | ✅ Complete | 12 images, awards on separate lines |
-| BC Passive House Factory | ✅ Complete | 7 images, awards on separate lines |
-| 1 Lonsdale | ✅ Complete | 8 images, size omitted pending confirmation, award on separate line |
-| BC Passive House Factory Addition | ✅ Complete | 6 images, Territory field, no awards |
-| New Hazelton Municipal Hall | ✅ Complete | 7 images (incl. 1 portrait), Territory field, no awards; page-specific 3:2 gallery override |
-| Ajax Mass Timber Warehouse | ✅ Complete | 7 images (Mirage Studio visualizations), Territory field, no awards; label is "Visualization" not "Photographer"; Year: "Current" |
+| BC Passive House Factory | ✅ Complete | 7 images, awards on separate lines; cross-links to BCPH Addition |
+| 1 Lonsdale | ✅ Complete | 8 images, size omitted pending confirmation, award on separate line; cross-link to BCPH |
+| BC Passive House Factory Addition | ✅ Complete | 6 images, Territory field, no awards; cross-links to BCPH |
+| New Hazelton Municipal Hall | ✅ Complete | 7 images (incl. 1 portrait), Territory field, no awards; page-specific 3:2 gallery override; hero cropped to center 70% |
+| Ajax Mass Timber Warehouse | ✅ Complete | 7 images (Mirage Studio visualizations), Territory field, no awards; label "Visualization"; Year: "Current" |
 | Morgan Elementary School | ✅ Complete | 5 images, no photographer credit, no territory, no awards |
 | Fleetwood Park Secondary School | ✅ Complete | 3 images (rendering + model + session), no photographer credit, in-progress |
 | Wedge Lane Residence | ✅ Complete | 6 images (incl. 1 drawing as portrait+white bg), Territory field, internal link to BCPH |
 | Whistler Museum and Archives | ✅ Complete | 6 images (3 renderings + 2 process + 1 model composite), Territory field, label "Visualization", Year: "Current" |
 | Indigenous Aquatic Research Centre | ✅ Complete | 3 images (2 renderings + 1 process), Territory field, Client field, label "Visualization", Year: "Current" |
-| Listen — Stanley Park | ✅ Complete | 6 images (firm photography, 2008), Collaboration field, no size/photographer/awards; panoramic cover as portrait+white bg |
+| Whistler Skiers Chapel | ✅ Complete | 3 images (2 renderings + 1 process), Territory field, label "Visualization", Year: "Current" |
+| Listen — Stanley Park | ✅ Complete | 6 images rebuilt from JH2008 originals (straight optimization, no adjustments), Collaboration field, no size/photographer/awards |
 | Ontario and Fifth | ⏸ ON HOLD | Awaiting original high-res KK Law files — images in 8-ON5 are low-res web downloads from naturallywood.com. Page HTML (ontario-and-fifth.html) drafted but NOT committed. Size unverified: Word doc says 936 m², external sources say 840 m². Model photo still to be added. Project video: https://youtu.be/B23XVhen9z0 (to embed when page is built). |
 
 ## Project Pages — Pattern
@@ -129,6 +131,7 @@ Each project page follows a consistent structure:
 - Video field: plain `<a href="...">` inside `<dd>` — inherits inline display, no text-transform
 - Image paths all use `../assets/images/projects/...`
 - `object-position` can be overridden inline per-image to frame the shot correctly
+- **Bottom nav:** Static HTML with three links: `<a id="nav-prev" href="../projects.html" class="back-prev">← Prev</a>`, `<a id="nav-all" href="../projects.html" class="back-all">← All Projects</a>`, `<a id="nav-next" href="../projects.html" class="back-next">Next →</a>` — JS updates hrefs at runtime from the PROJECTS registry in `project.js`
 - **Gallery aspect ratio:** Default is 16:9 (set in `project.css`). Most projects use Ema Peter photography delivered at 3:2, which fits well. If a project's photos are 4:3 (e.g. Martin Knowles), the 16:9 container crops ~25% of height — in that case add a page-specific `<style>#gallery-track { aspect-ratio: 3 / 2; }</style>` in the page `<head>` (do NOT edit the shared `project.css`). New Hazelton Municipal Hall uses this override. **Standing guidance: always preview the gallery after building a new project page and check for clipping before committing.**
 
 ## Image Optimisation — Convention
@@ -148,25 +151,39 @@ Each project page follows a consistent structure:
 - Mobile: filters in `#mobile-filters` strip (horizontal scroll, no wrap, hidden on desktop)
 - Active state managed by JS — do not hardcode `active` class on any filter link
 - Filter JS uses `.split(' ').includes(selected)` to handle multi-value data-cat
+- Card clicks carry `?cat=<active-filter>` to the destination project page (intercepted in `projects.js`)
 
 ## projects.html — Current Grid Order
 
-1. Upper Skeena Recreation Centre — Public ✅
-2. Leon Lebeniste — Industrial ✅
-3. BC Passive House Factory — Industrial ✅
-4. 1 Lonsdale — Public ✅
-5. Ajax Mass Timber Warehouse — in-progress ✅
-6. Indigenous Aquatic Research Centre — First Nations (in-progress) ✅
-7. Whistler Museum and Archives — Public (in-progress) ✅
-8. BC Passive House Factory Addition — Industrial ✅
-9. Fleetwood Park Secondary School — Education (in-progress) ✅
-10. New Hazelton Municipal Hall — Public ✅
-11. Wedge Lane Residence — Residential ✅
-12. Morgan Elementary School — Education ✅
-13. Whistler Skiers Chapel — in-progress ✅
-14. Listen — Stanley Park — Other ✅
+1. Upper Skeena Recreation Centre — `first-nations mass-timber public`
+2. Leon Lebeniste — `mass-timber industrial`
+3. BC Passive House Factory — `mass-timber industrial`
+4. 1 Lonsdale — `mass-timber public`
+5. Ajax Mass Timber Warehouse — `mass-timber industrial`
+6. Indigenous Aquatic Research Centre — `first-nations mass-timber public education`
+7. Whistler Museum and Archives — `mass-timber public education`
+8. BC Passive House Factory Addition — `mass-timber industrial`
+9. Fleetwood Park Secondary School — `public education`
+10. New Hazelton Municipal Hall — `mass-timber public`
+11. Wedge Lane Residence — *(no category)*
+12. Morgan Elementary School — `public education`
+13. Whistler Skiers Chapel — `mass-timber public`
+14. Listen — Stanley Park — *(no category)*
 
-**Pending:** Ontario and Fifth will slot in at position 5 or 6 once original KK Law photos arrive. It is the only project page not yet built.
+**Pending:** Ontario and Fifth will slot in at position 5 or 6 once original KK Law photos arrive.
+
+## Prev/Next Navigation — How It Works
+
+`js/project.js` maintains a `PROJECTS` array (top-level, not inside any IIFE) matching the grid order with each project's slug and category tags. At page load, a dedicated IIFE runs `buildProjectNav()` independently of the gallery code:
+
+1. Reads the current slug from `window.location.pathname`
+2. Reads `?cat=` from the URL (defaults to `'all'`; validates against known cats including `first-nations`)
+3. Filters `PROJECTS` to the active category subset
+4. Finds the current project's index in that subset
+5. Sets `← Prev` and `Next →` hrefs to the adjacent slugs (wrapping at ends), preserving `?cat=`
+6. Sets `← All Projects` href to `projects.html` (with `?cat=` if active)
+
+Uses `setAttribute('href', ...)` rather than the `.href` property setter. The nav IIFE is separate from the gallery IIFE so any gallery error cannot prevent it from running.
 
 ## Team — Members and Credentials
 
@@ -180,30 +197,30 @@ Each project page follows a consistent structure:
 
 Layout: two-column CSS grid, `grid-template-columns: 300px 1fr`, `column-gap: 10px`. Left cell = `.member-name-block` (name + credentials stacked). Right cell = `.member-role`. Mobile: flex column.
 
-## Known Issues / Pending
+## Outstanding — Next Session Priorities
+
+### 1. Ontario and Fifth (ON HOLD)
+- Awaiting original high-res photography from KK Law
+- Low-res web downloads are in `assets/images/projects/8-ON5/` — do NOT use these
+- Draft HTML at `projects/ontario-and-fifth.html` exists locally but is NOT committed
+- When photos arrive: run sharp conversion, slot page into grid at position ~5–6, confirm categories, confirm size (Word doc: 936 m², external sources: 840 m²), embed video (https://youtu.be/B23XVhen9z0)
+
+### 2. Mobile / Responsive Review
+- No thorough phone-width test has been done
+- Before public launch: check nav, galleries, category filter strip, Prev/Next links, and all inner pages at mobile width
+- Known mobile behaviour: project pages restructure to vertical stack via JS (hero → title/year → description → images → facts)
+
+### 3. Domain Migration (Final Launch Step)
+- GoDaddy domain currently points to the old Tumblr site
+- Redirect it to the Netlify deployment (`hemsworth-architecture.netlify.app`)
+- This is the final step before public launch
+
+### 4. Netlify Plan — Downgrade Before Next Billing
+- Site is currently on a paid Netlify plan (activated for this build cycle)
+- Downgrade to Free tier before next billing date to avoid a recurring charge
+- Free tier is sufficient for this static site
+
+## Known Issues
 - No 404 page
 - No favicon
-- 1 Lonsdale: Size field omitted pending confirmation
-- Mobile: second round of review pending
-
-## Pending — Final Pass (do once all project pages are built)
-
-1. **Prev / Next project navigation on project detail pages**
-   - Add Previous Project and Next Project links to the bottom carousel nav on every project detail page
-   - Keep the existing `← All Projects` link (`../projects.html`) in the centre between them
-   - Order must follow the main projects grid order (see projects.html — Current Grid Order above)
-   - Decide end behaviour at build time: either loop (last project wraps to first) or hide the arrow that has no target
-
-2. **Category assignments on projects.html**
-   - Set the correct `data-cat="..."` attribute on every live project card
-   - Categories: `in-progress`, `first-nations`, `public`, `industrial`, `commercial`, `education`, `residential`, `other`
-   - Currently the four live cards have placeholder categories — confirm final assignments with client before implementing
-
-## Next Session — Exact Next Steps
-Build additional project pages as photography is provided:
-
-1. Check `assets/images/projects/` for a new numbered folder
-2. Run sharp conversion (WebP, max 1920px, q80)
-3. Create `projects/{slug}.html` following the existing pattern (see Project Pages — Pattern above)
-4. Insert the new card above the placeholder block in `projects.html` (maintain live-first order)
-5. Commit and push
+- 1 Lonsdale: Size field omitted pending client confirmation
