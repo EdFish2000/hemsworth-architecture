@@ -122,7 +122,7 @@ Portfolio website for Hemsworth Architecture, a Vancouver-based architecture fir
 
 ## Category System
 
-Filter order (everywhere — sub-nav, mobile strip): **All → In Progress → Mass Timber → Industrial → Public → Education**
+Filter order (everywhere — sub-nav, mobile strip): **All → In Progress → Industrial → Public → Education → Mass Timber**
 
 | Category | data-cat value | Projects |
 |----------|---------------|---------|
@@ -143,17 +143,19 @@ Categories are additive (space-separated in `data-cat`). `first-nations` exists 
 3. BC Passive House Factory — `mass-timber industrial`
 4. 1 Lonsdale — `mass-timber public`
 5. Ajax Mass Timber Warehouse — `mass-timber industrial in-progress`
-6. Indigenous Aquatic Research Centre — `first-nations mass-timber public education in-progress`
-7. Whistler Museum and Archives — `mass-timber public education in-progress`
-8. BC Passive House Factory Addition — `mass-timber industrial`
-9. Fleetwood Park Secondary School — `public education in-progress`
+6. Wedge Lane Residence — *(no category)*
+7. Fleetwood Park Secondary School — `public education in-progress`
+8. Whistler Museum and Archives — `mass-timber public education in-progress`
+9. BC Passive House Factory Addition — `mass-timber industrial`
 10. New Hazelton Municipal Hall — `mass-timber public`
-11. Wedge Lane Residence — *(no category)*
+11. Indigenous Aquatic Research Centre — `first-nations mass-timber public education in-progress`
 12. Morgan Elementary School — `public education`
 13. Whistler Skiers Chapel — `mass-timber public in-progress`
 14. Listen — Stanley Park — *(no category)*
 
-**Pending:** Ontario and Fifth slots in at ~position 5–6 once original KK Law photos arrive.
+**Pending projects — insertion points:**
+- **Wei Wai Kum Waterfront** — insert at position 5 (after 1 Lonsdale, before Ajax Mass Timber Warehouse); tag `in-progress` (and whatever other categories apply) so it appears first in the In Progress filtered view. Awaiting assets.
+- **Ontario and Fifth** — insert between Fleetwood Park Secondary School (7) and Whistler Museum and Archives (8). Awaiting original high-res KK Law photos; draft `projects/ontario-and-fifth.html` exists locally, not committed. Size unverified (Word doc: 936 m² / external: 840 m²). Video: https://youtu.be/B23XVhen9z0
 
 ## Prev/Next Navigation — How It Works
 
@@ -209,7 +211,7 @@ Layout: two-column CSS grid, `grid-template-columns: 300px 1fr`, `column-gap: 10
 ### Ontario and Fifth (ON HOLD)
 - Awaiting original high-res photography from KK Law — do NOT use the low-res copies in `8-ON5/`
 - Draft `projects/ontario-and-fifth.html` exists locally but is not committed
-- When photos arrive: optimize with sharp, slot into grid at ~position 5–6, confirm categories, confirm size (Word doc: 936 m² / external sources: 840 m²), embed video https://youtu.be/B23XVhen9z0
+- When photos arrive: optimize with sharp, slot into grid between Fleetwood (7) and Whistler Museum (8), confirm categories, confirm size (Word doc: 936 m² / external sources: 840 m²), embed video https://youtu.be/B23XVhen9z0
 
 ### Whistler Skiers Chapel
 - Currently tagged `in-progress`; confirm this tag stays once construction begins
