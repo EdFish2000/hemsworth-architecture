@@ -332,6 +332,12 @@
     position: relative;
   }
 
+  #mobile-hero .mobile-slide.portrait,
+  #mobile-rest-images .mobile-slide.portrait {
+    aspect-ratio: 2 / 3;
+    background: #f5f4f2;
+  }
+
   #mobile-hero .mobile-slide img,
   #mobile-rest-images .mobile-slide img {
     position: absolute;
@@ -340,6 +346,11 @@
     height: 100%;
     object-fit: cover;
     display: block;
+  }
+
+  #mobile-hero .mobile-slide.portrait img,
+  #mobile-rest-images .mobile-slide.portrait img {
+    object-fit: contain;
   }
 
   #mobile-rest-images {

@@ -119,10 +119,11 @@ var PROJECTS = [
   // Helper: create a static slide div — supports both background-image and <img> slides
   function makeStaticSlide (sourceSlide) {
     const div = document.createElement('div');
-    div.className = 'mobile-slide';
+    div.className = 'mobile-slide' + (sourceSlide.classList.contains('portrait') ? ' portrait' : '');
     const img = sourceSlide.querySelector('img');
     if (img) {
       div.appendChild(img.cloneNode(true));
+      if (sourceSlide.style.background) div.style.background = sourceSlide.style.background;
     } else {
       div.setAttribute('style', sourceSlide.getAttribute('style'));
     }

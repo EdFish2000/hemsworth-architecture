@@ -22,7 +22,7 @@ Portfolio website for Hemsworth Architecture, a Vancouver-based architecture fir
 - **Projects grid:** Single column, full-width 16:9 images, continuous scroll
 - **Project detail:** Full-width 16:9 gallery; full-height left/right click zones; arrows edge-aligned, subtle at rest, bolder on hover; dot indicators at bottom; project title full-width above two-column info grid; facts left (labels + values both `rgba(0,0,0,0.38)` grey), description right; no divider lines; `← Prev` / `← All Projects` / `Next →` bottom nav, category-aware (cycles within active category, wrapping at ends)
 - **Inner pages (Approach, Team, Recognition, Contact):** Left sidebar with site nav; hero image at top; no footer contact links on Approach, Team, Recognition
-- **Mobile (<640px):** Sidebar becomes stacked header; hamburger opens `#mobile-nav` in sidebar flow; body scroll enabled; project page restructures to vertical sequence (hero → title/year → description → remaining images → facts); category filters appear as horizontal scroll strip between header and grid on projects.html
+- **Mobile (<640px):** Sidebar becomes stacked header; hamburger opens `#mobile-nav` in sidebar flow; body scroll enabled; project page restructures to vertical sequence (hero → title/year → description → remaining images → facts); category filters appear as horizontal scroll strip between header and grid on projects.html; portrait slides render at `aspect-ratio: 2/3` with `object-fit: contain` and `#f5f4f2` background — `makeStaticSlide()` in `project.js` carries the `.portrait` class through to mobile divs
 
 ## Tech Stack
 - Plain HTML / CSS / JS — no framework, no build tools
