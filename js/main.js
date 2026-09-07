@@ -5,7 +5,7 @@
   // ── Slideshow ─────────────────────────────────────────────────
   const slides      = document.querySelectorAll('.slide');
   const DURATION    = 6000;   // ms each slide is visible
-  let current       = 0;
+  let current       = window._heroStart || 0;  // set by inline script before first paint
   let timer         = null;
   let navigating    = false;
 

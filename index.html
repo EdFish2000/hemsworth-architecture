@@ -10,7 +10,7 @@
 
   <div id="hero">
 
-    <div class="slide active">
+    <div class="slide">
       <picture>
         <source srcset="assets/images/hero/USRC-Ice-Surface.webp" type="image/webp">
         <img src="assets/images/hero/USRC-Ice-Surface.jpg" alt="">
@@ -34,6 +34,14 @@
         <img src="assets/images/hero/PH1-Elevation-Dusk-1.jpg" alt="">
       </picture>
     </div>
+    <script>
+      (function () {
+        var s = document.querySelectorAll('.slide');
+        var i = Math.floor(Math.random() * s.length);
+        s[i].classList.add('active');
+        window._heroStart = i;
+      }());
+    </script>
 
     <header>
       <a href="projects.html" id="wordmark">
