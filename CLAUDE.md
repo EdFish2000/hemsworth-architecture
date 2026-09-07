@@ -175,7 +175,7 @@ Each project page follows a consistent structure:
 - HTML: `projects/{slug}.html`
 - Loads: `../css/style.css`, `../css/projects.css`, `../css/project.css`, `../css/about.css`
 - Scripts: `../js/projects.js`, `../js/project.js`, `../js/about.js`
-- Gallery: `<img>` tags inside `.gallery-slide` divs; portrait images get class `gallery-slide portrait`
+- Gallery: `<img>` tags inside `.gallery-slide` divs; portrait images **must** get class `gallery-slide portrait` — this class is what triggers the 2:3 contain treatment on mobile; omitting it will force the image into a cropped 4:3 landscape box
 - Navigation zones: `#zone-prev` and `#zone-next` divs inside `#gallery-track`; dot indicators via `#gallery-dots` (populated by JS)
 - Sidebar: site-nav with `class="site-link active"` on Projects link; `.sub-nav` without `expanded` (JS handles it)
 - Info panel: `<h1 class="project-title">` direct child of `#project-info`; `#project-info-columns` wraps `#project-facts` and `#project-description`; `#project-facts` starts with `<dl class="facts-list">` — no heading
