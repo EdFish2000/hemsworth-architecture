@@ -153,6 +153,8 @@ Categories are additive (space-separated in `data-cat`). `first-nations` exists 
 13. Whistler Skiers Chapel — `mass-timber public in-progress`
 14. Listen — Stanley Park — *(no category)*
 
+**The grid order in `projects.html` and the `PROJECTS` array in `js/project.js` must always be kept in sync.** The array drives Prev/Next navigation on every project detail page — if they diverge, Prev/Next will cycle in a different order than the grid. This applies when adding Wei Wai Kum, ON5, or any future project: update both files in the same commit.
+
 **Pending projects — insertion points:**
 - **Wei Wai Kum Waterfront** — insert at position 5 (after 1 Lonsdale, before Ajax Mass Timber Warehouse); tag `in-progress` (and whatever other categories apply) so it appears first in the In Progress filtered view. Awaiting assets.
 - **Ontario and Fifth** — insert between Fleetwood Park Secondary School (7) and Whistler Museum and Archives (8). Awaiting original high-res KK Law photos; draft `projects/ontario-and-fifth.html` exists locally, not committed. Size unverified (Word doc: 936 m² / external: 840 m²). Video: https://youtu.be/B23XVhen9z0
