@@ -17,11 +17,12 @@ Portfolio website for Hemsworth Architecture, a Vancouver-based architecture fir
 - **Color palette:** Black (#000) on white (#f5f4f2), dark home page (#0a0a0a background)
 - **Typography:** Arial, Helvetica, sans-serif — font-weight 300 throughout, uppercase + letter-spacing for labels
 - **Navigation:** Wordmark top-left on all pages; hamburger hidden on desktop (≥641px), visible on mobile only; left sidebar: Projects (toggle), Approach, Team, Recognition, Contact; Projects sub-nav shows All / In Progress / Mass Timber / Industrial / Public / Education; sub-nav stays expanded on the projects grid, filtered views, and all project detail pages; collapses on inner pages (Approach etc.) unless toggled; clicking Projects always toggles open/closed, never navigates; `+` / `−` indicator; active category highlighted based on `?cat=` URL param
-- **Home hero:** Full-bleed, 4-slide crossfade, 6s interval, 1.8s transition; click or scroll navigates to projects
+- **Home hero:** Full-bleed, 4-slide crossfade, 6s interval, 1.8s transition; starts on a random slide each page load (random index set by inline script before first paint, rotation continues in sequence from there); click or scroll navigates to projects
 - **Page transitions:** Slow white dissolve (1.5s each way) between all pages
 - **Projects grid:** Single column, full-width 16:9 images, continuous scroll
 - **Project detail:** Full-width 16:9 gallery; full-height left/right click zones; arrows edge-aligned, subtle at rest, bolder on hover; dot indicators at bottom; project title full-width above two-column info grid; facts left (labels + values both `rgba(0,0,0,0.38)` grey), description right; no divider lines; `← Prev` / `← All Projects` / `Next →` bottom nav, category-aware (cycles within active category, wrapping at ends)
 - **Inner pages (Approach, Team, Recognition, Contact):** Left sidebar with site nav; hero image at top; no footer contact links on Approach, Team, Recognition
+- **Sidebar footer:** "Vancouver, BC" followed by land acknowledgment — "On unceded Musqueam, Squamish and Tsleil-Waututh territory" — in the same small grey style (`text-transform: none`, `letter-spacing: 0.04em`). Same text also appears at the bottom of `#mobile-nav` dropdown with a thin rule separator (`.mobile-acknowledgment`). Applied to all 20 pages with sidebars.
 - **Mobile (<640px):** Sidebar becomes stacked header; hamburger opens `#mobile-nav` in sidebar flow; body scroll enabled; project page restructures to vertical sequence (hero → title/year → description → remaining images → facts); category filters appear as horizontal scroll strip between header and grid on projects.html; portrait slides render at `aspect-ratio: 2/3` with `object-fit: contain` and `#f5f4f2` background — `makeStaticSlide()` in `project.js` carries the `.portrait` class through to mobile divs
 
 ## Tech Stack
@@ -103,11 +104,11 @@ Portfolio website for Hemsworth Architecture, a Vancouver-based architecture fir
 | Approach (`approach.html`) | ✅ Live | Hero image (Leon Lebeniste rooftop), practice text, territorial acknowledgement |
 | Team (`team.html`) | ✅ Live | Hero image (BCPH); two-column grid (300px name+credentials / title); 5 members |
 | Contact (`contact.html`) | ✅ Live | Address, phone, office@ + employment@ emails, Instagram; two-column layout with hero image |
-| Recognition (`recognition.html`) | ✅ Live | Awards/Publications/Press; no divider lines; dates in aligned column |
+| Recognition (`recognition.html`) | ✅ Live | Awards/Publications/Press; no divider lines; dates in aligned column; project names link to their pages (no underline, hover darkens) |
 | Upper Skeena Rec Centre | ✅ Live | 16 images, Territory, Video, awards |
-| Leon Lebeniste | ✅ Live | 12 images, awards |
-| BC Passive House Factory | ✅ Live | 7 images, awards; cross-links to BCPH Addition |
-| 1 Lonsdale | ✅ Live | 8 images, size omitted pending confirmation; cross-link to BCPH |
+| Leon Lebeniste | ✅ Live | 12 images, Territory, awards |
+| BC Passive House Factory | ✅ Live | 7 images, Territory, awards; cross-links to BCPH Addition |
+| 1 Lonsdale | ✅ Live | 8 images, Territory, size omitted pending confirmation; cross-link to BCPH |
 | BC Passive House Factory Addition | ✅ Live | 6 images, Territory; cross-links to BCPH; slides 3+4 cropped to center bottom |
 | New Hazelton Municipal Hall | ✅ Live | 7 images (incl. 1 portrait), Territory; page-specific 3:2 gallery override; hero at center 70% |
 | Ajax Mass Timber Warehouse | ✅ Live | 7 images (Mirage Studio), Territory; label "Visualization"; Year: "Current"; in-progress |
@@ -117,7 +118,7 @@ Portfolio website for Hemsworth Architecture, a Vancouver-based architecture fir
 | Whistler Museum and Archives | ✅ Live | 6 images, Territory, label "Visualization", Year: "Current"; in-progress |
 | Indigenous Aquatic Research Centre | ✅ Live | 3 images, Territory, Client field, label "Visualization", Year: "Current"; in-progress |
 | Whistler Skiers Chapel | ✅ Live | 3 images, Territory, label "Visualization", Year: "Current"; in-progress |
-| Listen — Stanley Park | ✅ Live | 6 images rebuilt from JH2008 originals, Collaboration field |
+| Listen — Stanley Park | ✅ Live | 6 images rebuilt from JH2008 originals, Collaboration field; charred cedar detail (04-listen.webp) as first/cover image |
 | Ontario and Fifth | ⏸ ON HOLD | Awaiting original high-res KK Law photos. Low-res copies in `8-ON5/` — do NOT use. Draft HTML (`ontario-and-fifth.html`) exists locally, not committed. Size unverified (Word doc: 936 m², external: 840 m²). Video: https://youtu.be/B23XVhen9z0 |
 
 ## Category System
@@ -183,7 +184,7 @@ Each project page follows a consistent structure:
 - Navigation zones: `#zone-prev` and `#zone-next` divs inside `#gallery-track`; dot indicators via `#gallery-dots` (populated by JS)
 - Sidebar: site-nav with `class="site-link active"` on Projects link; `.sub-nav` without `expanded` (JS handles it)
 - Info panel: `<h1 class="project-title">` direct child of `#project-info`; `#project-info-columns` wraps `#project-facts` and `#project-description`; `#project-facts` starts with `<dl class="facts-list">` — no heading
-- Fields in order (omit if not applicable): Location, Territory, Client, Collaboration, Year, Size, Photographer/Visualization, Video, Awards
+- Fields in order (omit if not applicable): Location, Territory, Client, Collaboration, Year, Size, Video, Awards, Photographer/Visualization
 - Awards: one `<span class="award-line">` per award inside `<dd>`, format "YEAR — AWARD NAME"
 - Video: plain `<a href="...">` inside `<dd>` — inherits inline display, no text-transform
 - Image paths: `../assets/images/projects/...`; `object-position` overridden inline per-image as needed
@@ -202,9 +203,9 @@ Each project page follows a consistent structure:
 |------|-------|-------------|
 | John Hemsworth | Principal, Design Lead | Architect AIBC \| OAA \| M.ARCH \| B.ENG \| LEED AP \| MRAIC |
 | Dean Shwedyk | Senior Associate, Project Lead | MAA \| M.ARCH \| LEED AP |
-| Niall Jones | Associate, Project Lead | Associate M.ARCH \| NZIA \| CPHD |
+| Niall Jones | Associate, Project Lead | M.ARCH \| NZIA \| CPHD |
 | Jorne van der Voorn | Project Lead | Architect AIBC \| M.ARCH \| B.ENG |
-| Rebecca Boese | Project Lead | Senior Designer BSc Arch. \| RIBA |
+| Rebecca Boese | Senior Designer, Project Lead | BSc Arch. \| RIBA |
 
 Layout: two-column CSS grid, `grid-template-columns: 300px 1fr`, `column-gap: 10px`. Left = `.member-name-block`. Right = `.member-role`. Mobile: flex column.
 
@@ -226,3 +227,5 @@ Layout: two-column CSS grid, `grid-template-columns: 300px 1fr`, `column-gap: 10
 - No 404 page
 - No favicon
 - 1 Lonsdale: Size field omitted pending client confirmation
+- Territory line wording is inconsistent across pages: some say "Traditional, unceded territory of…", some say "Traditional territory of…", and Listen — Stanley Park uses English-only names with no Indigenous spellings. Consider a consistency pass when next editing project pages.
+- The `← All Projects` link in the bottom nav on Approach, Team, Recognition, and Contact pages may be redundant given the sidebar nav. Not yet decided whether to remove it.
