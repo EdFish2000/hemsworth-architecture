@@ -41,6 +41,17 @@
   color: rgba(0, 0, 0, 0.38);
 }
 
+.rec-project a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.25s ease;
+}
+
+.rec-project a:hover {
+  color: #0a0a0a;
+}
+
 .rec-year {
   color: rgba(0, 0, 0, 0.38);
 }
