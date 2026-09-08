@@ -43,8 +43,7 @@
 
 .rec-project a {
   color: inherit;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  text-decoration: none;
   transition: color 0.25s ease;
 }
 
